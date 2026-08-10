@@ -848,3 +848,108 @@ img {
     border-radius: 15px;
     display: block;
 }
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+  /* Hero: photo ke upar, text neeche */
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 40px 20px !important;
+  }
+
+  .hero-image,
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-image img {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: auto !important;
+    margin: 0 auto 30px !important;
+    display: block !important;
+  }
+
+  .hero-content {
+    padding: 0 !important;
+  }
+
+  .hero h1,
+  .hero h2 {
+    color: #d4af37 !important;
+  }
+
+  .hero p {
+    color: #f5f1e8 !important;
+  }
+
+  /* About section */
+  .about,
+  .about-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 50px 20px !important;
+  }
+
+  .about-image,
+  .about-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about-image {
+    order: 1 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .about-content {
+    order: 2 !important;
+  }
+
+  .about-image img {
+    width: 100% !important;
+    max-width: 350px !important;
+    height: auto !important;
+    margin: auto !important;
+    display: block !important;
+  }
+
+  .about h2,
+  .about h3,
+  .about-section h2,
+  .about-section h3 {
+    color: #d4af37 !important;
+  }
+
+  /* Featured Novels */
+  .featured,
+  .featured-novels,
+  .novels-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .novel-card {
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 20px auto !important;
+  }
+
+  .novel-card h2,
+  .novel-card h3,
+  .novel-card h4 {
+    color: #d4af37 !important;
+  }
+
+  /* General golden headings */
+  h1, h2, h3 {
+    color: #d4af37;
+  }
+}
