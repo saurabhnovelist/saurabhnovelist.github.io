@@ -1,260 +1,249 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Saurabh Novelist | Official Website</title>
+  <title>SaurabhNovelist | Words Become Emotions</title>
 
-    <meta name="description"
-          content="Saurabh Novelist - लेखक, शायर और कहानीकार। पढ़िए Ek Anjan Mulakat और नई कहानियाँ।">
+  <meta name="description"
+        content="Official website of SaurabhNovelist — novels, shayari and stories where words become emotions.">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
-<header class="header">
-
+  <!-- HEADER -->
+  <header class="header">
     <div class="logo">
-        <span class="logo-mark">SN</span>
-
-        <div>
-            <h1>Saurabh Novelist</h1>
-            <small>Words • Stories • Emotions</small>
-        </div>
+      <span>✒</span> Saurabh<span>Novelist</span>
     </div>
 
-    <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#novels">Novels</a>
-        <a href="#shayari">Shayari</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#novels">Novels</a>
+      <a href="#shayari">Shayari</a>
+      <a href="#blog">Blog</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-</header>
-
-
-<!-- ================= MOBILE MENU ================= -->
-
-<div class="mobile-menu" id="mobileMenu">
-
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#novels" onclick="closeMenu()">Novels</a>
-    <a href="#shayari" onclick="closeMenu()">Shayari</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
-
-</div>
+    <button class="menu">☰</button>
+  </header>
 
 
-<!-- ================= HERO ================= -->
+  <!-- HERO -->
+  <section id="home" class="hero">
 
-<section class="hero" id="home">
+    <div class="hero-image">
+      <img src="images/author.jpg" alt="Saurabh Novelist">
+    </div>
 
     <div class="hero-content">
+      <p class="gold-text">Welcome to</p>
 
-        <p class="welcome">WELCOME TO MY WORLD</p>
+      <h1>Saurabh<span>Novelist</span></h1>
 
-        <h2>
-            जहाँ शब्दों में<br>
-            <span>कहानियाँ बसती हैं।</span>
-        </h2>
+      <h2>Where Words Become Emotions</h2>
 
-        <p class="hero-text">
-            Welcome to the official website of
-            <strong>Saurabh Novelist</strong> —
-            a place where words become emotions
-            and stories become memories.
-        </p>
+      <p class="hindi">
+        जहाँ शब्द भावनाएँ बन जाते हैं।
+      </p>
 
-        <div class="hero-buttons">
-
-            <a href="#novels" class="btn primary">
-                📖 Read My Novel
-            </a>
-
-            <a href="#about" class="btn secondary">
-                About Author
-            </a>
-
-        </div>
-
+      <div class="buttons">
+        <a href="#novels" class="btn">📖 Read My Novels</a>
+        <a href="#shayari" class="btn outline">✒ Explore Shayari</a>
+      </div>
     </div>
 
-</section>
+  </section>
 
 
-<!-- ================= FEATURED NOVEL ================= -->
+  <!-- ABOUT -->
+  <section id="about" class="about">
 
-<section class="featured" id="novels">
+    <div class="about-text">
+      <p class="gold-text">About Me</p>
 
-    <div class="section-heading">
+      <h2>Writer | Dreamer | Creator</h2>
 
-        <p>MY FIRST NOVEL</p>
+      <p>
+        I'm Saurabh, a passionate writer who believes in the power
+        of words. I write novels, shayari and stories that touch
+        the heart and stay in your memories.
+      </p>
 
-        <h2>Ek Anjan Mulakat</h2>
-
-        <div class="line"></div>
-
+      <a href="#contact" class="btn outline">Know More About Me</a>
     </div>
 
+    <div class="about-photo">
+      <img src="images/author.jpg" alt="Saurabh">
+    </div>
 
-    <div class="novel-card">
+  </section>
 
+
+  <!-- FEATURES -->
+  <section class="features">
+
+    <div>
+      <span>✒</span>
+      <h3>Original Stories</h3>
+      <p>100% original and heart-touching stories.</p>
+    </div>
+
+    <div>
+      <span>♥</span>
+      <h3>Emotional Connection</h3>
+      <p>Stories created to connect with your emotions.</p>
+    </div>
+
+    <div>
+      <span>📖</span>
+      <h3>Regular Updates</h3>
+      <p>New stories and shayari added regularly.</p>
+    </div>
+
+    <div>
+      <span>★</span>
+      <h3>Reader First</h3>
+      <p>Your love and support is my motivation.</p>
+    </div>
+
+  </section>
+
+
+  <!-- NOVELS -->
+  <section id="novels" class="section">
+
+    <p class="gold-text">My First Novel</p>
+
+    <h2>Featured Novels</h2>
+
+    <div class="novel-grid">
+
+      <article class="novel-card">
         <div class="novel-cover">
-
-            <div class="cover-content">
-
-                <small>A NOVEL BY</small>
-
-                <h3>SAURABH<br>NOVELIST</h3>
-
-                <div class="cover-line"></div>
-
-                <h4>एक अनजान मुलाकात</h4>
-
-                <p>Ek Anjan Mulakat</p>
-
-            </div>
-
+          📖
         </div>
 
+        <h3>एक अनजान मुलाकात</h3>
 
-        <div class="novel-info">
+        <p>
+          एक कहानी जो एक अनजान मुलाकात से शुरू होती है।
+        </p>
 
-            <span class="tag">FIRST NOVEL</span>
+        <a href="#" class="btn">Read Now</a>
+      </article>
 
-            <h3>Ek Anjan Mulakat</h3>
 
-            <p>
-                कभी-कभी जिंदगी की सबसे खूबसूरत कहानी
-                एक ऐसी मुलाकात से शुरू होती है,
-                जिसकी हमने कभी कल्पना भी नहीं की होती।
-            </p>
-
-            <p>
-                <b>Ek Anjan Mulakat</b> एक भावनात्मक कहानी है,
-                जिसमें मुलाकात, रिश्ते, सपने और जिंदगी के
-                अनकहे एहसासों की कहानी है।
-            </p>
-
-            <button class="read-btn">
-                📖 Read Novel
-            </button>
-
+      <article class="novel-card">
+        <div class="novel-cover">
+          📚
         </div>
 
-    </div>
-
-</section>
-
-
-<!-- ================= SHAYARI ================= -->
-
-<section class="shayari" id="shayari">
-
-    <div class="section-heading">
-
-        <p>FROM MY HEART</p>
-
-        <h2>Shayari</h2>
-
-        <div class="line"></div>
-
-    </div>
-
-
-    <div class="shayari-box">
-
-        <div class="quote">“</div>
+        <h3>तन्हा रास्ते</h3>
 
         <p>
-            कुछ मुलाकातें जिंदगी बदल देती हैं,<br>
-            कुछ बातें दिल में उतर जाती हैं,<br>
-            और कुछ लोग अनजान होकर भी<br>
-            हमेशा के लिए अपने बन जाते हैं।
+          प्रेम, जिंदगी और खुद को तलाशने की एक कहानी।
         </p>
 
-        <span>— Saurabh Novelist</span>
-
-    </div>
-
-</section>
+        <a href="#" class="btn">Coming Soon</a>
+      </article>
 
 
-<!-- ================= ABOUT ================= -->
+      <article class="novel-card coming">
+        <div class="novel-cover">
+          ✨
+        </div>
 
-<section class="about" id="about">
-
-    <div class="about-image">
-
-        <img src="images/author.jpg"
-             alt="Saurabh Novelist">
-
-    </div>
-
-
-    <div class="about-content">
-
-        <p class="small-title">ABOUT THE AUTHOR</p>
-
-        <h2>Saurabh Novelist</h2>
-
-        <div class="line left"></div>
+        <h3>Coming Soon</h3>
 
         <p>
-            शब्द मेरे लिए सिर्फ शब्द नहीं हैं,
-            बल्कि भावनाओं को व्यक्त करने का एक माध्यम हैं।
+          Something amazing is on the way...
         </p>
 
-        <p>
-            मैं कहानियाँ, उपन्यास और शायरी लिखता हूँ,
-            जहाँ रिश्तों, भावनाओं और जिंदगी के
-            खूबसूरत एहसासों को शब्द देने की कोशिश करता हूँ।
-        </p>
-
-        <a href="#contact" class="btn primary">
-            Connect With Me
-        </a>
+        <a href="#contact" class="btn outline">Stay Tuned</a>
+      </article>
 
     </div>
 
-</section>
+  </section>
 
 
-<!-- ================= CONTACT ================= -->
+  <!-- SHAYARI -->
+  <section id="shayari" class="shayari">
 
-<section class="contact" id="contact">
+    <p class="gold-text">My Words</p>
 
-    <div class="section-heading">
+    <h2>Shayari</h2>
 
-        <p>LET'S CONNECT</p>
+    <blockquote>
+      “कुछ शब्द अधूरे रह जाते हैं,<br>
+      जब भावनाएँ पूरी नहीं हो पातीं।”
+    </blockquote>
 
-        <h2>Contact Me</h2>
+    <a href="#" class="btn">Explore Shayari</a>
 
-        <div class="line"></div>
+  </section>
 
+
+  <!-- BLOG -->
+  <section id="blog" class="section">
+
+    <p class="gold-text">From My Pen</p>
+
+    <h2>Latest Stories & Blogs</h2>
+
+    <div class="blog-card">
+      <h3>मेरी लेखनी की शुरुआत</h3>
+      <p>
+        शब्दों से मेरा रिश्ता और कहानियाँ लिखने का सफर...
+      </p>
+      <a href="#" class="read-more">Read More →</a>
     </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+
+    <p class="gold-text">Get In Touch</p>
+
+    <h2>Connect With Me</h2>
 
     <p>
-        मेरे लेखन और नई कहानियों से जुड़े रहने के लिए
-        मुझसे संपर्क करें।
+      Stories, shayari और नए updates के लिए जुड़े रहें।
     </p>
 
-    <a href="mailto:your-email@example.com"
-       ="btn primary">
-        ✉ Send Email
-    </a>
+    <div class="social">
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">Email</a>
+    </div>
 
-</section>
+  </section>
 
 
-<!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
+  <footer>
 
-<footer>
+    <div class="logo">
+      ✒ Saurabh<span>Novelist</span>
+    </div>
+
+    <p>Where Words Become Emotions. ♡</p>
+
+    <p class="copyright">
+      © 2026 SaurabhNovelist. All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
