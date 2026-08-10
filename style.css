@@ -835,3 +835,16 @@ img {
         height: auto;
     }
 }
+.about-image {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
