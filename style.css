@@ -797,4 +797,41 @@ img {
     gap: 25px;
     width: 100%;
   }
+}/* ===== PHOTO FIX ===== */
+.hero-image img,
+.about-image img,
+.featured-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero,
+    .about,
+    .featured {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-image,
+    .about-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-content,
+    .about-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-image img,
+    .about-image img {
+        width: 100%;
+        height: auto;
+    }
 }
