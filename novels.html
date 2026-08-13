@@ -1,1 +1,283 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>मेरी Novels | SaurabhNovelist</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:#fff;
+    font-family:Georgia,"Noto Serif Devanagari",serif;
+}
+
+.page{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 18px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.header h1{
+    color:#d4af37;
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.header p{
+    color:#aaa;
+    font-size:17px;
+}
+
+.line{
+    width:100px;
+    height:2px;
+    background:#d4af37;
+    margin:20px auto;
+}
+
+.novel-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:25px;
+}
+
+.novel-card{
+    background:linear-gradient(145deg,#181818,#0f0f0f);
+    border:1px solid #705d20;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(212,175,55,.08);
+}
+
+.novel-cover img{
+    width:100%;
+    max-width:230px;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(212,175,55,.15);
+}
+
+.novel-card h2{
+    color:#e6c85c;
+    margin-top:22px;
+}
+
+.novel-card p{
+    color:#bbb;
+    line-height:1.7;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    margin-top:14px;
+    padding:13px 18px;
+    background:#d4af37;
+    color:#111;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.btn.outline{
+    background:transparent;
+    color:#d4af37;
+    border:1px solid #d4af37;
+}
+
+.btn:hover{
+    background:#f0d36a;
+    color:#111;
+}
+
+.coming{
+    opacity:.8;
+}
+
+.coming .novel-cover{
+    height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:60px;
+    color:#d4af37;
+}
+
+.back{
+    display:block;
+    width:max-content;
+    margin:45px auto 15px;
+    padding:13px 28px;
+    background:#d4af37;
+    color:#111;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    margin-top:50px;
+    padding-top:25px;
+    border-top:1px solid #3d3216;
+    color:#777;
+}
+
+footer strong{
+    color:#d4af37;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="header">
+
+<h1>📚 मेरी Novels</h1>
+
+<div class="line"></div>
+
+<p>
+मेरी लिखी कहानियों की दुनिया में आपका स्वागत है ❤️
+</p>
+
+</div>
+
+
+<div class="novel-grid">
+
+
+<!-- NOVEL 1 -->
+
+<div class="novel-card">
+
+<div class="novel-cover">
+
+<img
+src="images/ek-anjan-mulakat-book-cover.jpg"
+alt="एक अनजान मुलाकात"
+>
+
+</div>
+
+<h2>एक अनजान मुलाकात</h2>
+
+<p>
+एक कहानी जो एक अनजान मुलाकात से शुरू होती है
+और धीरे-धीरे जिंदगी की खूबसूरत कहानी बन जाती है।
+</p>
+
+<a
+href="ek-anjan-mulakat-part-1.pdf"
+target="_blank"
+class="btn"
+>
+📖 Novel पढ़ें
+</a>
+
+<a
+href="novel-review.html"
+class="btn outline"
+>
+⭐ Review दें
+</a>
+
+</div>
+
+
+<!-- NOVEL 2 -->
+
+<div class="novel-card">
+
+<div class="novel-cover">
+
+<img
+src="images/ek-anjan-mulakat.jpg"
+alt="तन्हा रास्ते"
+>
+
+</div>
+
+<h2>तन्हा रास्ते</h2>
+
+<p>
+प्रेम, जिंदगी और खुद को तलाशने की
+एक नई कहानी।
+</p>
+
+<a
+href="#"
+class="btn"
+>
+📖 Coming Soon
+</a>
+
+</div>
+
+
+<!-- COMING SOON -->
+
+<div class="novel-card coming">
+
+<div class="novel-cover">
+✨
+</div>
+
+<h2>Coming Soon</h2>
+
+<p>
+एक नई कहानी जल्द ही आपके सामने होगी...
+</p>
+
+<a
+href="#contact"
+class="btn outline"
+>
+❤️ Stay Tuned
+</a>
+
+</div>
+
+
+</div>
+
+
+<a href="index.html" class="back">
+← Home पर वापस
+</a>
+
+
+<footer>
+
+<strong>SaurabhNovelist</strong>
+
+<br><br>
+
+Where Words Become Emotions. ♡
+
+<br><br>
+
+© 2026 SaurabhNovelist
+
+</footer>
+
+</div>
+
+</body>
+</html>
