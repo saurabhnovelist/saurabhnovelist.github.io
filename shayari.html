@@ -1,124 +1,272 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>मेरी शायरियाँ | Saurabh Novelist</title>
+<title>मेरी शायरियाँ | Saurabh Novelist</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            background: #0b0b0b;
-            color: #fff;
-            font-family: Georgia, "Noto Serif Devanagari", serif;
-        }
+body {
+    margin: 0;
+    background: #0b0b0b;
+    color: #fff;
+    font-family: Georgia, "Noto Serif Devanagari", serif;
+}
 
-        .page {
-            max-width: 900px;
-            margin: auto;
-            padding: 45px 18px;
-        }
+.page {
+    max-width: 900px;
+    margin: auto;
+    padding: 45px 18px;
+}
 
-        .top {
-            text-align: center;
-            margin-bottom: 45px;
-        }
+.top {
+    text-align: center;
+    margin-bottom: 45px;
+}
 
-        .top h1 {
-            color: #d4af37;
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
+.top h1 {
+    color: #d4af37;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
 
-        .top p {
-            color: #aaa;
-            font-size: 17px;
-        }
+.top p {
+    color: #aaa;
+    font-size: 17px;
+}
 
-        .line {
-            width: 100px;
-            height: 2px;
-            background: #d4af37;
-            margin: 20px auto;
-        }
+.line {
+    width: 100px;
+    height: 2px;
+    background: #d4af37;
+    margin: 20px auto;
+}
 
-        .shayari-card {
-            position: relative;
-            margin: 28px auto;
-            padding: 32px 22px;
-            max-width: 700px;
+.shayari-card {
+    position: relative;
+    margin: 28px auto;
+    padding: 32px 22px;
+    max-width: 700px;
 
-            background: linear-gradient(
-                145deg,
-                #181818,
-                #0e0e0e
-            );
+    background: linear-gradient(
+        145deg,
+        #181818,
+        #0e0e0e
+    );
 
-            border: 1px solid #8f7420;
-            border-radius: 15px;
+    border: 1px solid #8f7420;
+    border-radius: 15px;
 
-            box-shadow: 0 0 20px rgba(212,175,55,0.12);
-        }
+    box-shadow: 0 0 20px rgba(212,175,55,0.12);
+}
 
-        .number {
-            color: #d4af37;
-            font-size: 15px;
-            margin-bottom: 18px;
-        }
+.number {
+    color: #d4af37;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
 
-        .shayari-card p {
-            color: #e6c85c;
-            font-size: 21px;
-            line-height: 2;
-            text-align: center;
-            font-style: italic;
-            margin: 0;
-        }
+.shayari-card p {
+    color: #e6c85c;
+    font-size: 21px;
+    line-height: 2;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+}
 
-        .heart {
-            color: #d4af37;
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-        }
+.heart {
+    color: #d4af37;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
 
-        .back {
-            display: block;
-            width: fit-content;
-            margin: 45px auto 10px;
+/* REVIEW SECTION */
 
-            padding: 13px 28px;
+.review-section {
+    max-width: 700px;
+    margin: 70px auto 30px;
+}
 
-            background: #d4af37;
-            color: #111;
+.review-title {
+    text-align: center;
+    color: #d4af37;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
 
-            text-decoration: none;
-            font-weight: bold;
+.review-subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 30px;
+}
 
-            border-radius: 25px;
-        }
+.review-box {
+    background: linear-gradient(145deg, #181818, #0e0e0e);
+    border: 1px solid #8f7420;
+    border-radius: 15px;
+    padding: 25px;
+}
 
-        .back:hover {
-            background: #f0d36a;
-        }
+.review-box label {
+    display: block;
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 55px;
-            padding-top: 25px;
-            border-top: 1px solid #3d3216;
-            color: #777;
-        }
+.review-box input,
+.review-box textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 20px;
 
-        footer strong {
-            color: #d4af37;
-        }
-    </style>
+    background: #111;
+    color: white;
+
+    border: 1px solid #554616;
+    border-radius: 8px;
+
+    font-size: 16px;
+    outline: none;
+}
+
+.review-box textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.review-box input:focus,
+.review-box textarea:focus {
+    border-color: #d4af37;
+}
+
+/* STARS */
+
+.stars {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.star {
+    font-size: 32px;
+    color: #555;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.star.active {
+    color: #d4af37;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+
+    background: #d4af37;
+    color: #111;
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #f0d36a;
+}
+
+.message {
+    text-align: center;
+    margin-top: 15px;
+    color: #d4af37;
+}
+
+/* REVIEWS */
+
+.all-reviews {
+    margin-top: 45px;
+}
+
+.review-card {
+    background: #141414;
+    border: 1px solid #554616;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+.review-name {
+    color: #d4af37;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.review-stars {
+    color: #d4af37;
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.review-comment {
+    color: #ddd;
+    line-height: 1.7;
+}
+
+.no-reviews {
+    text-align: center;
+    color: #777;
+}
+
+.rating-summary {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.back {
+    display: block;
+    width: fit-content;
+    margin: 45px auto 10px;
+
+    padding: 13px 28px;
+
+    background: #d4af37;
+    color: #111;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 25px;
+}
+
+.back:hover {
+    background: #f0d36a;
+}
+
+footer {
+    text-align: center;
+    margin-top: 55px;
+    padding-top: 25px;
+    border-top: 1px solid #3d3216;
+    color: #777;
+}
+
+footer strong {
+    color: #d4af37;
+}
+</style>
 </head>
 
 <body>
@@ -126,6 +274,7 @@
 <div class="page">
 
     <div class="top">
+
         <h1>✍️ मेरी शायरियाँ</h1>
 
         <div class="line"></div>
@@ -133,6 +282,7 @@
         <p>
             दिल से निकले शब्दों का एक छोटा सा संसार...
         </p>
+
     </div>
 
 
@@ -217,29 +367,404 @@
         </div>
 
     </div>
-    
+
+
     <!-- SHAYARI 5 -->
-    
-<div class="shayari-card">
-            <div class="number">
+
+    <div class="shayari-card">
+
+        <div class="number">
             ✦ Shayari 05
-            </div>
-    <p>
-        लड़की की मोहब्बत में वफ़ा ढूँढते हो,<br>
-        बड़े नादान हो दोस्त...<br>
-        ज़हर की बोतल में दवा ढूँढते हो। ✨
-    </p>
-    <div class="heart">
+        </div>
+
+        <p>
+            लड़की की मोहब्बत में वफ़ा ढूँढते हो,<br>
+            बड़े नादान हो दोस्त...<br>
+            ज़हर की बोतल में दवा ढूँढते हो। ✨
+        </p>
+
+        <div class="heart">
             ♡ ❦ ♡
-</div>
-        </section>
+        </div>
+
     </div>
 
-    <a href="index.html" class="back">← Home पर वापस</a>
+
+    <!-- REVIEW SECTION -->
+
+    <section class="review-section">
+
+        <h2 class="review-title">
+            ⭐ अपनी राय दें
+        </h2>
+
+        <p class="review-subtitle">
+            मेरी शायरियाँ आपको कैसी लगीं?
+        </p>
+
+
+        <div class="review-box">
+
+            <label>आपका नाम</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="अपना नाम लिखें"
+                maxlength="50"
+            >
+
+
+            <label>आपकी Rating</label>
+
+            <div class="stars" id="stars">
+
+                <span class="star" data-rating="1">★</span>
+                <span class="star" data-rating="2">★</span>
+                <span class="star" data-rating="3">★</span>
+                <span class="star" data-rating="4">★</span>
+                <span class="star" data-rating="5">★</span>
+
+            </div>
+
+
+            <label>आपका Comment</label>
+
+            <textarea
+                id="comment"
+                placeholder="अपनी राय लिखें..."
+                maxlength="500"
+            ></textarea>
+
+
+            <button class="submit-btn" id="submitBtn">
+                📤 Review भेजें
+            </button>
+
+            <div class="message" id="message"></div>
+
+        </div>
+
+
+        <!-- OLD REVIEWS -->
+
+        <div class="all-reviews">
+
+            <h2 class="review-title">
+                💬 लोगों की राय
+            </h2>
+
+            <div class="rating-summary" id="ratingSummary">
+                Reviews लोड हो रहे हैं...
+            </div>
+
+            <div id="reviewsList">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <a href="index.html" class="back">
+        ← Home पर वापस
+    </a>
+
+
+    <footer>
+        © <strong>Saurabh Novelist</strong> — Where Words Become Emotions. ♡
+    </footer>
 
 </div>
 
-</body>
-</html>
 
-        
+<!-- SUPABASE -->
+
+<script type="module">
+
+import {
+    createClient
+} from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+
+const SUPABASE_URL =
+    "https://byzzwowcanhuxcvioomx.supabase.co";
+
+
+const SUPABASE_KEY =
+    "sb_publishable_VK2m0y7kuseIyn2JV46ELg_hRrxHVcH";
+
+
+const supabase = createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+// ==========================
+// STAR RATING
+// ==========================
+
+let selectedRating = 0;
+
+const stars =
+    document.querySelectorAll(".star");
+
+
+stars.forEach(star => {
+
+    star.addEventListener("click", () => {
+
+        selectedRating =
+            Number(star.dataset.rating);
+
+        stars.forEach(s => {
+
+            const rating =
+                Number(s.dataset.rating);
+
+            if (rating <= selectedRating) {
+                s.classList.add("active");
+            } else {
+                s.classList.remove("active");
+            }
+
+        });
+
+    });
+
+});
+
+
+// ==========================
+// SUBMIT REVIEW
+// ==========================
+
+const submitBtn =
+    document.getElementById("submitBtn");
+
+
+submitBtn.addEventListener("click", async () => {
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const comment =
+        document.getElementById("comment").value.trim();
+
+    const message =
+        document.getElementById("message");
+
+
+    if (!name) {
+
+        message.textContent =
+            "⚠️ कृपया अपना नाम लिखें।";
+
+        return;
+    }
+
+
+    if (selectedRating === 0) {
+
+        message.textContent =
+            "⭐ कृपया Rating चुनें।";
+
+        return;
+    }
+
+
+    if (!comment) {
+
+        message.textContent =
+            "💬 कृपया अपना Comment लिखें।";
+
+        return;
+    }
+
+
+    submitBtn.disabled = true;
+
+    submitBtn.textContent =
+        "भेजा जा रहा है...";
+
+
+    const { error } =
+        await supabase
+        .from("reviews")
+        .insert({
+
+            name: name,
+            rating: selectedRating,
+            comment: comment
+
+        });
+
+
+    if (error) {
+
+        console.error(error);
+
+        message.textContent =
+            "❌ Review भेजने में समस्या हुई।";
+
+        submitBtn.disabled = false;
+
+        submitBtn.textContent =
+            "📤 Review भेजें";
+
+        return;
+    }
+
+
+    message.textContent =
+        "✅ आपका Review सफलतापूर्वक भेज दिया गया!";
+
+
+    document.getElementById("name").value = "";
+
+    document.getElementById("comment").value = "";
+
+    selectedRating = 0;
+
+
+    stars.forEach(s =>
+        s.classList.remove("active")
+    );
+
+
+    submitBtn.disabled = false;
+
+    submitBtn.textContent =
+        "📤 Review भेजें";
+
+
+    loadReviews();
+
+});
+
+
+// ==========================
+// LOAD REVIEWS
+// ==========================
+
+async function loadReviews() {
+
+    const reviewsList =
+        document.getElementById("reviewsList");
+
+    const ratingSummary =
+        document.getElementById("ratingSummary");
+
+
+    const { data, error } =
+        await supabase
+        .from("reviews")
+        .select("id,name,rating,comment")
+        .order("id", { ascending: false });
+
+
+    if (error) {
+
+        console.error(error);
+
+        ratingSummary.textContent =
+            "Reviews लोड नहीं हो पाए।";
+
+        return;
+    }
+
+
+    if (!data || data.length === 0) {
+
+        ratingSummary.textContent =
+            "अभी कोई Review नहीं है। आप पहला Review दें ❤️";
+
+        reviewsList.innerHTML = "";
+
+        return;
+    }
+
+
+    // Average Rating
+
+    const total =
+        data.reduce(
+            (sum, review) =>
+            sum + Number(review.rating),
+            0
+        );
+
+
+    const average =
+        (total / data.length).toFixed(1);
+
+
+    ratingSummary.innerHTML =
+        `⭐ ${average} / 5 — ${data.length} Reviews`;
+
+
+    reviewsList.innerHTML = "";
+
+
+    data.forEach(review => {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "review-card";
+
+
+        const starsText =
+            "★".repeat(Number(review.rating)) +
+            "☆".repeat(5 - Number(review.rating));
+
+
+        card.innerHTML = `
+
+            <div class="review-name">
+                👤 ${escapeHTML(review.name)}
+            </div>
+
+            <div class="review-stars">
+                ${starsText}
+            </div>
+
+            <div class="review-comment">
+                ${escapeHTML(review.comment)}
+            </div>
+
+        `;
+
+
+        reviewsList.appendChild(card);
+
+    });
+
+}
+
+
+// ==========================
+// SECURITY
+// ==========================
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+
+// पहली बार Reviews लोड करें
+
+loadReviews();
+
+</script>
+
+</body>
+</html> 
