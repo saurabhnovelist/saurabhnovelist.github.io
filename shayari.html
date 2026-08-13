@@ -6,6 +6,9 @@
 
 <title>मेरी शायरियाँ | Saurabh Novelist</title>
 
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 * {
     box-sizing: border-box;
@@ -53,11 +56,7 @@ body {
     padding: 32px 22px;
     max-width: 700px;
 
-    background: linear-gradient(
-        145deg,
-        #181818,
-        #0e0e0e
-    );
+    background: linear-gradient(145deg, #181818, #0e0e0e);
 
     border: 1px solid #8f7420;
     border-radius: 15px;
@@ -89,86 +88,65 @@ body {
 
 /* REVIEW SECTION */
 
-.review-section {
-    max-width: 700px;
-    margin: 70px auto 30px;
-}
-
-.review-title {
-    text-align: center;
-    color: #d4af37;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-.review-subtitle {
-    text-align: center;
-    color: #999;
-    margin-bottom: 30px;
-}
-
 .review-box {
+    max-width: 700px;
+    margin: 55px auto 30px;
+    padding: 28px 22px;
+
     background: linear-gradient(145deg, #181818, #0e0e0e);
+
     border: 1px solid #8f7420;
     border-radius: 15px;
-    padding: 25px;
+
+    box-shadow: 0 0 20px rgba(212,175,55,0.12);
 }
 
-.review-box label {
-    display: block;
+.review-box h2 {
+    text-align: center;
     color: #d4af37;
-    margin-bottom: 8px;
-    font-size: 16px;
+    margin-top: 0;
 }
 
-.review-box input,
-.review-box textarea {
+.review-input {
     width: 100%;
     padding: 13px;
-    margin-bottom: 20px;
+    margin: 8px 0;
 
     background: #111;
     color: white;
 
-    border: 1px solid #554616;
+    border: 1px solid #555;
     border-radius: 8px;
 
     font-size: 16px;
+}
+
+.review-input:focus {
     outline: none;
-}
-
-.review-box textarea {
-    min-height: 110px;
-    resize: vertical;
-}
-
-.review-box input:focus,
-.review-box textarea:focus {
     border-color: #d4af37;
 }
 
-/* STARS */
-
-.stars {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 20px;
+.rating {
+    text-align: center;
+    margin: 18px 0;
 }
 
-.star {
-    font-size: 32px;
-    color: #555;
+.rating span {
+    font-size: 35px;
     cursor: pointer;
+    color: #555;
     transition: 0.2s;
 }
 
-.star.active {
+.rating span.active {
     color: #d4af37;
 }
 
 .submit-btn {
-    width: 100%;
-    padding: 14px;
+    display: block;
+    margin: 15px auto 5px;
+
+    padding: 13px 30px;
 
     background: #d4af37;
     color: #111;
@@ -176,7 +154,7 @@ body {
     border: none;
     border-radius: 25px;
 
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
 
     cursor: pointer;
@@ -186,24 +164,27 @@ body {
     background: #f0d36a;
 }
 
-.message {
+#message {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 12px;
     color: #d4af37;
 }
 
 /* REVIEWS */
 
-.all-reviews {
-    margin-top: 45px;
+#reviews {
+    max-width: 700px;
+    margin: 25px auto;
 }
 
-.review-card {
-    background: #141414;
-    border: 1px solid #554616;
+.single-review {
+    background: #151515;
+
+    border: 1px solid #3d3216;
     border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 18px;
+
+    padding: 18px;
+    margin: 15px 0;
 }
 
 .review-name {
@@ -214,25 +195,19 @@ body {
 
 .review-stars {
     color: #d4af37;
-    margin: 8px 0;
+    margin: 6px 0;
     font-size: 18px;
 }
 
 .review-comment {
     color: #ddd;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
-.no-reviews {
-    text-align: center;
+.review-date {
     color: #777;
-}
-
-.rating-summary {
-    text-align: center;
-    color: #d4af37;
-    margin-bottom: 25px;
-    font-size: 18px;
+    font-size: 12px;
+    margin-top: 8px;
 }
 
 .back {
@@ -249,10 +224,6 @@ body {
     font-weight: bold;
 
     border-radius: 25px;
-}
-
-.back:hover {
-    background: #f0d36a;
 }
 
 footer {
@@ -274,7 +245,6 @@ footer strong {
 <div class="page">
 
     <div class="top">
-
         <h1>✍️ मेरी शायरियाँ</h1>
 
         <div class="line"></div>
@@ -282,7 +252,6 @@ footer strong {
         <p>
             दिल से निकले शब्दों का एक छोटा सा संसार...
         </p>
-
     </div>
 
 
@@ -390,80 +359,56 @@ footer strong {
     </div>
 
 
-    <!-- REVIEW SECTION -->
+    <!-- REVIEW FORM -->
 
-    <section class="review-section">
+    <div class="review-box">
 
-        <h2 class="review-title">
-            ⭐ अपनी राय दें
-        </h2>
+        <h2>⭐ अपनी राय दें</h2>
 
-        <p class="review-subtitle">
-            मेरी शायरियाँ आपको कैसी लगीं?
+        <input
+            type="text"
+            id="name"
+            class="review-input"
+            placeholder="अपना नाम लिखें"
+            maxlength="50"
+        >
+
+        <div class="rating" id="rating">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+        </div>
+
+        <textarea
+            id="comment"
+            class="review-input"
+            rows="4"
+            placeholder="अपनी राय या कमेंट लिखें..."
+            maxlength="500"
+        ></textarea>
+
+        <button class="submit-btn" onclick="submitReview()">
+            💛 Comment भेजें
+        </button>
+
+        <div id="message"></div>
+
+    </div>
+
+
+    <!-- ALL REVIEWS -->
+
+    <h2 style="text-align:center;color:#d4af37;">
+        💬 पाठकों की राय
+    </h2>
+
+    <div id="reviews">
+        <p style="text-align:center;color:#777;">
+            Reviews लोड हो रहे हैं...
         </p>
-
-
-        <div class="review-box">
-
-            <label>आपका नाम</label>
-
-            <input
-                type="text"
-                id="name"
-                placeholder="अपना नाम लिखें"
-                maxlength="50"
-            >
-
-
-            <label>आपकी Rating</label>
-
-            <div class="stars" id="stars">
-
-                <span class="star" data-rating="1">★</span>
-                <span class="star" data-rating="2">★</span>
-                <span class="star" data-rating="3">★</span>
-                <span class="star" data-rating="4">★</span>
-                <span class="star" data-rating="5">★</span>
-
-            </div>
-
-
-            <label>आपका Comment</label>
-
-            <textarea
-                id="comment"
-                placeholder="अपनी राय लिखें..."
-                maxlength="500"
-            ></textarea>
-
-
-            <button class="submit-btn" id="submitBtn">
-                📤 Review भेजें
-            </button>
-
-            <div class="message" id="message"></div>
-
-        </div>
-
-
-        <!-- OLD REVIEWS -->
-
-        <div class="all-reviews">
-
-            <h2 class="review-title">
-                💬 लोगों की राय
-            </h2>
-
-            <div class="rating-summary" id="ratingSummary">
-                Reviews लोड हो रहे हैं...
-            </div>
-
-            <div id="reviewsList">
-            </div>
-
-        </div>
-
-    </section>
+    </div>
 
 
     <a href="index.html" class="back">
@@ -472,58 +417,52 @@ footer strong {
 
 
     <footer>
-        © <strong>Saurabh Novelist</strong> — Where Words Become Emotions. ♡
+        © <strong>Saurabh Novelist</strong> | मेरी शायरियाँ
     </footer>
 
 </div>
 
 
-<!-- SUPABASE -->
+<script>
 
-<script type="module">
-
-import {
-    createClient
-} from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-
+/* ==============================
+   SUPABASE CONNECTION
+================================ */
 
 const SUPABASE_URL =
-    "https://byzzwowcanhuxcvioomx.supabase.co";
-
+"https://byzzwowcanhuxcvioomx.supabase.co";
 
 const SUPABASE_KEY =
-    "sb_publishable_VK2m0y7kuseIyn2JV46ELg_hRrxHVcH";
+"sb_publishable_VK2m0y7kuseIyn2JV46ELg_hRrxHVcH";
 
-
-const supabase = createClient(
+const supabaseClient =
+supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );
 
 
-// ==========================
-// STAR RATING
-// ==========================
+/* ==============================
+   STAR RATING
+================================ */
 
 let selectedRating = 0;
 
-const stars =
-    document.querySelectorAll(".star");
-
+const stars = document.querySelectorAll("#rating span");
 
 stars.forEach(star => {
 
-    star.addEventListener("click", () => {
+    star.addEventListener("click", function() {
 
         selectedRating =
-            Number(star.dataset.rating);
+            Number(this.dataset.value);
 
         stars.forEach(s => {
 
-            const rating =
-                Number(s.dataset.rating);
+            const value =
+                Number(s.dataset.value);
 
-            if (rating <= selectedRating) {
+            if (value <= selectedRating) {
                 s.classList.add("active");
             } else {
                 s.classList.remove("active");
@@ -536,15 +475,11 @@ stars.forEach(star => {
 });
 
 
-// ==========================
-// SUBMIT REVIEW
-// ==========================
+/* ==============================
+   SUBMIT REVIEW
+================================ */
 
-const submitBtn =
-    document.getElementById("submitBtn");
-
-
-submitBtn.addEventListener("click", async () => {
+async function submitReview() {
 
     const name =
         document.getElementById("name").value.trim();
@@ -558,7 +493,7 @@ submitBtn.addEventListener("click", async () => {
 
     if (!name) {
 
-        message.textContent =
+        message.innerText =
             "⚠️ कृपया अपना नाम लिखें।";
 
         return;
@@ -567,8 +502,8 @@ submitBtn.addEventListener("click", async () => {
 
     if (selectedRating === 0) {
 
-        message.textContent =
-            "⭐ कृपया Rating चुनें।";
+        message.innerText =
+            "⚠️ कृपया Rating दें।";
 
         return;
     }
@@ -576,28 +511,75 @@ submitBtn.addEventListener("click", async () => {
 
     if (!comment) {
 
-        message.textContent =
-            "💬 कृपया अपना Comment लिखें।";
+        message.innerText =
+            "⚠️ कृपया अपना Comment लिखें।";
 
         return;
     }
 
 
-    submitBtn.disabled = true;
-
-    submitBtn.textContent =
-        "भेजा जा रहा है...";
+    message.innerText =
+        "⏳ Comment भेजा जा रहा है...";
 
 
     const { error } =
-        await supabase
+        await supabaseClient
         .from("reviews")
-        .insert({
+        .insert([
+            {
+                name: name,
+                rating: selectedRating,
+                comment: comment
+            }
+        ]);
 
-            name: name,
-            rating: selectedRating,
-            comment: comment
 
+    if (error) {
+
+        console.error(error);
+
+        message.innerText =
+            "❌ Comment भेजने में समस्या हुई।";
+
+        return;
+    }
+
+
+    message.innerText =
+        "✅ आपका Comment सफलतापूर्वक भेज दिया गया!";
+
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+
+    selectedRating = 0;
+
+    stars.forEach(s =>
+        s.classList.remove("active")
+    );
+
+
+    loadReviews();
+
+}
+
+
+/* ==============================
+   LOAD REVIEWS
+================================ */
+
+async function loadReviews() {
+
+    const reviewsBox =
+        document.getElementById("reviews");
+
+
+    const { data, error } =
+        await supabaseClient
+        .from("reviews")
+        .select("*")
+        .order("created_at", {
+            ascending: false
         });
 
 
@@ -605,71 +587,8 @@ submitBtn.addEventListener("click", async () => {
 
         console.error(error);
 
-        message.textContent =
-            "❌ Review भेजने में समस्या हुई।";
-
-        submitBtn.disabled = false;
-
-        submitBtn.textContent =
-            "📤 Review भेजें";
-
-        return;
-    }
-
-
-    message.textContent =
-        "✅ आपका Review सफलतापूर्वक भेज दिया गया!";
-
-
-    document.getElementById("name").value = "";
-
-    document.getElementById("comment").value = "";
-
-    selectedRating = 0;
-
-
-    stars.forEach(s =>
-        s.classList.remove("active")
-    );
-
-
-    submitBtn.disabled = false;
-
-    submitBtn.textContent =
-        "📤 Review भेजें";
-
-
-    loadReviews();
-
-});
-
-
-// ==========================
-// LOAD REVIEWS
-// ==========================
-
-async function loadReviews() {
-
-    const reviewsList =
-        document.getElementById("reviewsList");
-
-    const ratingSummary =
-        document.getElementById("ratingSummary");
-
-
-    const { data, error } =
-        await supabase
-        .from("reviews")
-        .select("id,name,rating,comment")
-        .order("id", { ascending: false });
-
-
-    if (error) {
-
-        console.error(error);
-
-        ratingSummary.textContent =
-            "Reviews लोड नहीं हो पाए।";
+        reviewsBox.innerHTML =
+            "<p style='text-align:center;color:#f55;'>Reviews लोड नहीं हो सके।</p>";
 
         return;
     }
@@ -677,77 +596,70 @@ async function loadReviews() {
 
     if (!data || data.length === 0) {
 
-        ratingSummary.textContent =
-            "अभी कोई Review नहीं है। आप पहला Review दें ❤️";
-
-        reviewsList.innerHTML = "";
+        reviewsBox.innerHTML =
+            "<p style='text-align:center;color:#777;'>अभी कोई Review नहीं है। आप पहले Review दें ❤️</p>";
 
         return;
     }
 
 
-    // Average Rating
-
-    const total =
-        data.reduce(
-            (sum, review) =>
-            sum + Number(review.rating),
-            0
-        );
-
-
-    const average =
-        (total / data.length).toFixed(1);
-
-
-    ratingSummary.innerHTML =
-        `⭐ ${average} / 5 — ${data.length} Reviews`;
-
-
-    reviewsList.innerHTML = "";
+    reviewsBox.innerHTML = "";
 
 
     data.forEach(review => {
 
-        const card =
+        const stars =
+            "★".repeat(review.rating) +
+            "☆".repeat(5 - review.rating);
+
+
+        const date =
+            review.created_at
+            ? new Date(review.created_at)
+                .toLocaleDateString("hi-IN")
+            : "";
+
+
+        const reviewElement =
             document.createElement("div");
 
-        card.className =
-            "review-card";
+        reviewElement.className =
+            "single-review";
 
 
-        const starsText =
-            "★".repeat(Number(review.rating)) +
-            "☆".repeat(5 - Number(review.rating));
-
-
-        card.innerHTML = `
+        reviewElement.innerHTML = `
 
             <div class="review-name">
                 👤 ${escapeHTML(review.name)}
             </div>
 
             <div class="review-stars">
-                ${starsText}
+                ${stars}
             </div>
 
             <div class="review-comment">
                 ${escapeHTML(review.comment)}
             </div>
 
+            <div class="review-date">
+                ${date}
+            </div>
+
         `;
 
 
-        reviewsList.appendChild(card);
+        reviewsBox.appendChild(
+            reviewElement
+        );
 
     });
 
 }
 
 
-// ==========================
-// SECURITY
-// ==========================
+/* ==============================
+   SECURITY
+================================ */
 
 function escapeHTML(text) {
 
@@ -760,11 +672,13 @@ function escapeHTML(text) {
 }
 
 
-// पहली बार Reviews लोड करें
+/* ==============================
+   START
+================================ */
 
 loadReviews();
 
 </script>
 
 </body>
-</html> 
+</html>
