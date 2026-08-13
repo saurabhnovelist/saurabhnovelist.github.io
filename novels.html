@@ -280,6 +280,84 @@ Where Words Become Emotions. ♡
 </footer>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script>
+
+const SUPABASE_URL =
+"https://byzzwowcanhuxcvioomx.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_VK2m0y7kuseIyn2JV46ELg_hRrxHVcH";
+
+const supabaseClient =
+supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+async function loadNovelRating() {
+
+    const { data, error } =
+        await supabaseClient
+        .from("novel_reviews")
+        .select("rating")
+        .eq("novel", "एक अनजान मुलाकात");
+
+
+    const box =
+        document.getElementById("rating-anjan");
+
+
+    if (error) {
+
+        console.error(error);
+
+        box.innerHTML =
+            "⭐ Rating उपलब्ध नहीं है";
+
+        return;
+    }
+
+
+    if (!data || data.length === 0) {
+
+        box.innerHTML =
+            "⭐ अभी कोई Rating नहीं";
+
+        return;
+    }
+
+
+    let total = 0;
+
+    data.forEach(review => {
+        total += Number(review.rating);
+    });
+
+
+    const average =
+        (total / data.length).toFixed(1);
+
+
+    const fullStars =
+        Math.round(average);
+
+
+    const stars =
+        "★".repeat(fullStars) +
+        "☆".repeat(5 - fullStars);
+
+
+    box.innerHTML =
+        `${stars} ${average}/5 · ${data.length} Reviews`;
+
+}
+
+
+loadNovelRating();
+
+</script>
 </body>
 </html>
