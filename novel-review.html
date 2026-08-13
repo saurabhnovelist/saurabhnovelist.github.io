@@ -1,1 +1,548 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>एक अनजान मुलाकात | Reviews</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:Georgia,"Noto Serif Devanagari",serif;
+}
+
+.page{
+    max-width:850px;
+    margin:auto;
+    padding:35px 18px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.header h1{
+    color:#d4af37;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.header p{
+    color:#aaa;
+    font-size:17px;
+}
+
+.line{
+    width:100px;
+    height:2px;
+    background:#d4af37;
+    margin:18px auto;
+}
+
+/* NOVEL */
+.novel{
+    text-align:center;
+    padding:25px;
+    border:1px solid #8f7420;
+    border-radius:18px;
+    background:linear-gradient(145deg,#181818,#0e0e0e);
+}
+
+.novel img{
+    width:180px;
+    max-width:80%;
+    border-radius:10px;
+    box-shadow:0 0 25px rgba(212,175,55,.18);
+}
+
+.novel h2{
+    color:#e6c85c;
+    margin-top:20px;
+}
+
+/* REVIEW FORM */
+.review-box{
+    margin-top:35px;
+    padding:28px 20px;
+    border:1px solid #8f7420;
+    border-radius:18px;
+    background:#111;
+}
+
+.review-box h2{
+    text-align:center;
+    color:#d4af37;
+}
+
+input,textarea{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #555;
+    background:#191919;
+    color:white;
+    font-size:16px;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+/* STARS */
+.stars{
+    text-align:center;
+    margin:15px 0;
+}
+
+.star{
+    font-size:35px;
+    color:#555;
+    cursor:pointer;
+}
+
+.star.active{
+    color:#d4af37;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:30px;
+    background:#d4af37;
+    color:#111;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* SUCCESS */
+#message{
+    text-align:center;
+    margin-top:15px;
+    color:#d4af37;
+    font-size:17px;
+}
+
+/* REVIEWS */
+.reviews{
+    margin-top:45px;
+}
+
+.reviews h2{
+    text-align:center;
+    color:#d4af37;
+}
+
+.average{
+    text-align:center;
+    font-size:22px;
+    color:#e6c85c;
+    margin:20px 0;
+}
+
+.review-card{
+    background:#151515;
+    border:1px solid #554718;
+    border-radius:15px;
+    padding:20px;
+    margin:18px 0;
+}
+
+.review-name{
+    color:#e6c85c;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.review-stars{
+    color:#d4af37;
+    font-size:20px;
+    margin:8px 0;
+}
+
+.review-comment{
+    color:#ddd;
+    font-size:17px;
+    line-height:1.7;
+}
+
+.back{
+    display:block;
+    width:max-content;
+    margin:40px auto 15px;
+    padding:13px 28px;
+    background:#d4af37;
+    color:#111;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    margin-top:50px;
+    padding-top:25px;
+    border-top:1px solid #3d3216;
+    color:#777;
+}
+
+footer strong{
+    color:#d4af37;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+
+<h1>📖 एक अनजान मुलाकात</h1>
+
+<div class="line"></div>
+
+<p>
+इस Novel को पढ़ने के बाद अपनी राय जरूर बताइए ❤️
+</p>
+
+</div>
+
+
+<!-- NOVEL -->
+<div class="novel">
+
+<img src="images/ek-anjan-mulakat-book-cover.jpg"
+     alt="एक अनजान मुलाकात Book Cover">
+
+<h2>एक अनजान मुलाकात</h2>
+
+<p>
+एक कहानी जो एक अनजान मुलाकात से शुरू होती है...
+</p>
+
+</div>
+
+
+<!-- REVIEW FORM -->
+<div class="review-box">
+
+<h2>✍️ अपना Review दें</h2>
+
+<input
+    type="text"
+    id="name"
+    placeholder="अपना नाम लिखें"
+>
+
+<div class="stars">
+
+<span class="star" data-rating="1">★</span>
+<span class="star" data-rating="2">★</span>
+<span class="star" data-rating="3">★</span>
+<span class="star" data-rating="4">★</span>
+<span class="star" data-rating="5">★</span>
+
+</div>
+
+<textarea
+    id="comment"
+    placeholder="Novel के बारे में अपनी राय लिखें..."
+></textarea>
+
+<button onclick="submitReview()">
+    📤 Review भेजें
+</button>
+
+<div id="message"></div>
+
+</div>
+
+
+<!-- REVIEWS -->
+<div class="reviews">
+
+<h2>💬 पाठकों की राय</h2>
+
+<div class="average" id="average">
+    ⭐ अभी कोई Review नहीं है
+</div>
+
+<div id="reviewsList"></div>
+
+</div>
+
+
+<a href="index.html" class="back">
+    ← Home पर वापस
+</a>
+
+
+<footer>
+
+<strong>SaurabhNovelist</strong>
+
+<br><br>
+
+Where Words Become Emotions. ♡
+
+</footer>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL =
+"https://byzzwowcanhuxcvioomx.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_VK2m0y7kuseIyn2JV46ELg_hRrxHVcH";
+
+const supabaseClient =
+supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+let selectedRating = 0;
+
+
+/* STAR SELECT */
+
+document.querySelectorAll(".star").forEach(star => {
+
+    star.addEventListener("click", () => {
+
+        selectedRating =
+            Number(star.dataset.rating);
+
+        document.querySelectorAll(".star").forEach(s => {
+
+            s.classList.toggle(
+                "active",
+                Number(s.dataset.rating) <= selectedRating
+            );
+
+        });
+
+    });
+
+});
+
+
+/* SUBMIT REVIEW */
+
+async function submitReview(){
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const comment =
+        document.getElementById("comment").value.trim();
+
+    const message =
+        document.getElementById("message");
+
+
+    if(!name){
+
+        message.innerText =
+        "⚠️ कृपया अपना नाम लिखें।";
+
+        return;
+    }
+
+
+    if(selectedRating === 0){
+
+        message.innerText =
+        "⚠️ कृपया Star Rating दें।";
+
+        return;
+    }
+
+
+    if(!comment){
+
+        message.innerText =
+        "⚠️ कृपया अपना Review लिखें।";
+
+        return;
+    }
+
+
+    message.innerText =
+    "⏳ Review भेजा जा रहा है...";
+
+
+    const { error } = await supabaseClient
+        .from("novel_reviews")
+        .insert([
+            {
+                novel:"एक अनजान मुलाकात",
+                name:name,
+                rating:selectedRating,
+                comment:comment
+            }
+        ]);
+
+
+    if(error){
+
+        console.error(error);
+
+        message.innerText =
+        "❌ Review भेजने में समस्या हुई।";
+
+        return;
+    }
+
+
+    message.innerText =
+    "✅ आपका Review सफलतापूर्वक भेज दिया गया! ❤️";
+
+
+    document.getElementById("name").value = "";
+
+    document.getElementById("comment").value = "";
+
+    selectedRating = 0;
+
+    document.querySelectorAll(".star")
+        .forEach(s => s.classList.remove("active"));
+
+
+    loadReviews();
+
+}
+
+
+/* LOAD REVIEWS */
+
+async function loadReviews(){
+
+    const { data, error } =
+        await supabaseClient
+        .from("novel_reviews")
+        .select("*")
+        .eq("novel","एक अनजान मुलाकात")
+        .order("created_at",{ascending:false});
+
+
+    if(error){
+
+        console.error(error);
+
+        return;
+    }
+
+
+    const list =
+        document.getElementById("reviewsList");
+
+
+    const average =
+        document.getElementById("average");
+
+
+    list.innerHTML = "";
+
+
+    if(!data || data.length === 0){
+
+        average.innerText =
+        "⭐ अभी कोई Review नहीं है";
+
+        return;
+    }
+
+
+    let total = 0;
+
+
+    data.forEach(review => {
+
+        total += review.rating;
+
+
+        const card =
+        document.createElement("div");
+
+        card.className =
+        "review-card";
+
+
+        const stars =
+        "★".repeat(review.rating) +
+        "☆".repeat(5-review.rating);
+
+
+        card.innerHTML = `
+
+            <div class="review-name">
+                👤 ${escapeHTML(review.name)}
+            </div>
+
+            <div class="review-stars">
+                ${stars}
+            </div>
+
+            <div class="review-comment">
+                ${escapeHTML(review.comment)}
+            </div>
+
+        `;
+
+
+        list.appendChild(card);
+
+    });
+
+
+    const avg =
+        (total / data.length).toFixed(1);
+
+
+    average.innerText =
+        `⭐ ${avg} / 5 — ${data.length} Reviews`;
+
+}
+
+
+/* SECURITY */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+
+/* START */
+
+loadReviews();
+
+</script>
+
+</body>
+  </html>
