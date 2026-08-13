@@ -965,3 +965,9 @@ img {
     object-fit: cover;
     display: block;
 }
+.live-rating {
+    margin: 15px 0;
+    color: #d4af37;
+    font-size: 17px;
+    font-weight: bold;
+}
