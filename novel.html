@@ -144,6 +144,159 @@
     </a>
 
   </main>
+<!-- NOVEL REVIEWS -->
 
+<div class="novel-reviews">
+
+    <h2>💬 पाठकों की राय</h2>
+
+    <div id="novelReviews">
+        <p>Reviews लोड हो रहे हैं...</p>
+    </div>
+
+</div>
+
+<style>
+.novel-reviews {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 25px 18px;
+    color: white;
+}
+
+.novel-reviews h2 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 25px;
+}
+
+.novel-review {
+    background: #151515;
+    border: 1px solid #8f7420;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+.novel-review-name {
+    color: #d4af37;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.novel-review-stars {
+    color: #d4af37;
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.novel-review-comment {
+    color: #ddd;
+    line-height: 1.7;
+}
+
+.novel-review-date {
+    color: #777;
+    font-size: 12px;
+    margin-top: 8px;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL =
+"https://byzzwowcanhuxcvioomx.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_VK2m0y7kuseIyn2JV46ELg_hRrxHVcH";
+
+const supabaseClient =
+supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+async function loadNovelReviews() {
+
+    const box =
+        document.getElementById("novelReviews");
+
+    const { data, error } =
+        await supabaseClient
+        .from("reviews")
+        .select("*")
+        .order("created_at", {
+            ascending: false
+        });
+
+    if (error) {
+        console.error(error);
+        box.innerHTML =
+            "<p>Reviews लोड नहीं हो सके।</p>";
+        return;
+    }
+
+    if (!data || data.length === 0) {
+        box.innerHTML =
+            "<p style='text-align:center;color:#777;'>अभी कोई Review नहीं है।</p>";
+        return;
+    }
+
+    box.innerHTML = "";
+
+    data.forEach(review => {
+
+        const stars =
+            "★".repeat(review.rating) +
+            "☆".repeat(5 - review.rating);
+
+        const date = review.created_at
+            ? new Date(review.created_at)
+                .toLocaleDateString("hi-IN")
+            : "";
+
+        const div =
+            document.createElement("div");
+
+        div.className =
+            "novel-review";
+
+        div.innerHTML = `
+            <div class="novel-review-name">
+                👤 ${escapeHTML(review.name)}
+            </div>
+
+            <div class="novel-review-stars">
+                ${stars}
+            </div>
+
+            <div class="novel-review-comment">
+                ${escapeHTML(review.comment)}
+            </div>
+
+            <div class="novel-review-date">
+                ${date}
+            </div>
+        `;
+
+        box.appendChild(div);
+    });
+}
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+loadNovelReviews();
+
+  </script>
 </body>
 </html>
