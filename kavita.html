@@ -447,7 +447,7 @@ document.querySelector(".review-submit").addEventListener("click", async () => {
 
 
     alert("❤️ आपका Review सफलतापूर्वक भेज दिया गया!");
-
+loadReviews();
     document.querySelector(".review-name").value = "";
     document.querySelector(".review-comment").value = "";
 
@@ -458,6 +458,62 @@ document.querySelector(".review-submit").addEventListener("click", async () => {
     });
 
 });
+    async function loadReviews() {
+
+    const container = document.getElementById("reviewsContainer");
+
+    const { data, error } = await supabaseClient
+        .from("kavita_reviews")
+        .select("rating, name, comment, created_at")
+        .order("created_at", { ascending: false });
+
+    if (error) {
+        console.error(error);
+        container.innerHTML =
+            '<div class="no-reviews">Reviews लोड नहीं हो पाए।</div>';
+        return;
+    }
+
+    if (!data || data.length === 0) {
+        container.innerHTML =
+            '<div class="no-reviews">अभी कोई Review नहीं है।</div>';
+        return;
+    }
+
+    container.innerHTML = "";
+
+    data.forEach(review => {
+
+        const stars =
+            "★".repeat(review.rating) +
+            "☆".repeat(5 - review.rating);
+
+        const div = document.createElement("div");
+
+        div.className = "single-review";
+
+        div.innerHTML = `
+            <div class="review-stars">${stars}</div>
+            <div class="review-user">${escapeHTML(review.name)}</div>
+            <div class="review-text">${escapeHTML(review.comment)}</div>
+        `;
+
+        container.appendChild(div);
+    });
+}
+
+
+function escapeHTML(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+
+loadReviews();
     </script>
 </body>
 </html>
