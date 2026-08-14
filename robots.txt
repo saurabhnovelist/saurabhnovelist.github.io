@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://saurabhnovelist.github.io/Deadline/sitemap.xml
