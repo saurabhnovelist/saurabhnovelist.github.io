@@ -439,7 +439,55 @@
   </footer>
 
   <script src="script.js"></script>
+<script>
+function updateIndependenceCountdown() {
 
+    const now = new Date();
+
+    let year = now.getFullYear();
+
+    let independenceDay =
+        new Date(year, 7, 15, 0, 0, 0);
+
+    if (now >= independenceDay) {
+        independenceDay =
+            new Date(year + 1, 7, 15, 0, 0, 0);
+    }
+
+    const difference =
+        independenceDay - now;
+
+    const days =
+        Math.floor(difference / (1000 * 60 * 60 * 24));
+
+    const hours =
+        Math.floor(
+            (difference / (1000 * 60 * 60)) % 24
+        );
+
+    const minutes =
+        Math.floor(
+            (difference / (1000 * 60)) % 60
+        );
+
+    const seconds =
+        Math.floor(
+            (difference / 1000) % 60
+        );
+
+    document.getElementById(
+        "independence-countdown"
+    ).innerHTML =
+        `${days} दिन • ${hours} घंटे • ${minutes} मिनट • ${seconds} सेकंड`;
+}
+
+updateIndependenceCountdown();
+
+setInterval(
+    updateIndependenceCountdown,
+    1000
+);
+</script>
 </body>
 </html>
 
