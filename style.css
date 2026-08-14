@@ -1110,3 +1110,37 @@ img {
         font-size: 16px;
     }
 }
+.freedom-message {
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    animation: tricolorGlow 3s infinite;
+}
+
+.countdown-title {
+    margin-top: 25px;
+    color: #aaa;
+    font-size: 15px;
+}
+
+.countdown {
+    margin-top: 8px;
+    color: #d4af37;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@keyframes tricolorGlow {
+    0% {
+        text-shadow: 0 0 5px #ff9933;
+    }
+
+    50% {
+        text-shadow: 0 0 12px #ffffff;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #138808;
+    }
+}
