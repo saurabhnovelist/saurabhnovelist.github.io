@@ -319,6 +319,92 @@
     </footer>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script>
+const SUPABASE_URL = "https://byzzwowcanhuxcvioomx.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_VK2m0y7kuseIyn2JV46ELg_hRrxHVcH";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+let selectedRating = 0;
+
+const stars = document.querySelectorAll(".stars button");
+
+stars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+
+        selectedRating = index + 1;
+
+        stars.forEach((s, i) => {
+            s.style.color =
+                i < selectedRating ? "#d4af37" : "#777";
+        });
+
+    });
+});
+
+
+document.querySelector(".review-submit").addEventListener("click", async () => {
+
+    const name =
+        document.querySelector(".review-name").value.trim();
+
+    const comment =
+        document.querySelector(".review-comment").value.trim();
+
+
+    if (selectedRating === 0) {
+        alert("पहले Rating दें ⭐");
+        return;
+    }
+
+    if (!name) {
+        alert("अपना नाम लिखें।");
+        return;
+    }
+
+    if (!comment) {
+        alert("अपना Comment लिखें।");
+        return;
+    }
+
+
+    const { error } = await supabaseClient
+        .from("kavita_reviews")
+        .insert([
+            {
+                rating: selectedRating,
+                name: name,
+                comment: comment
+            }
+        ]);
+
+
+    if (error) {
+        console.error(error);
+        alert("Review भेजने में समस्या हुई।");
+        return;
+    }
+
+
+    alert("❤️ आपका Review सफलतापूर्वक भेज दिया गया!");
+
+    document.querySelector(".review-name").value = "";
+    document.querySelector(".review-comment").value = "";
+
+    selectedRating = 0;
+
+    stars.forEach(star => {
+        star.style.color = "#777";
+    });
+
+});
+    </script>
 </body>
 </html>
