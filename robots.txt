@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://saurabhnovelist.github.io/Deadline/sitemap.xml
+Sitemap: https://saurabhnovelist.github.io/sitemap.xml
