@@ -104,3 +104,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuBtn = document.querySelector(".menu");
+const nav = document.querySelector(".header nav");
+
+if (menuBtn && nav) {
+
+    menuBtn.addEventListener("click", function () {
+        nav.classList.toggle("active");
+
+        if (nav.classList.contains("active")) {
+            menuBtn.innerHTML = "✕";
+        } else {
+            menuBtn.innerHTML = "☰";
+        }
+    });
+
+    // Menu link par click karne ke baad menu band
+    nav.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            nav.classList.remove("active");
+            menuBtn.innerHTML = "☰";
+        });
+    });
+}
