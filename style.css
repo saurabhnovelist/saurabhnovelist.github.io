@@ -1226,3 +1226,50 @@ img {
         border-bottom: none;
     }
 }
+/* ================= POSTS ================= */
+
+.post-section {
+    padding: 70px 7%;
+    background: #0b0b0d;
+}
+
+.post-card {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+}
+
+.post-card img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: auto;
+
+    border: 1px solid rgba(212,175,55,0.45);
+    border-radius: 15px;
+
+    box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+}
+
+.post-card h3 {
+    color: #d4af37;
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 22px;
+}
+
+.post-card p {
+    color: #999;
+    margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+    .post-section {
+        padding: 50px 5%;
+    }
+
+    .post-card h3 {
+        font-size: 20px;
+    }
+}
