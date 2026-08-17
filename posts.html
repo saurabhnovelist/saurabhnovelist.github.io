@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -28,6 +29,9 @@ body{
     font-family:Georgia,"Noto Serif Devanagari",serif;
 }
 
+
+/* HEADER */
+
 .header{
     padding:20px;
     text-align:center;
@@ -48,11 +52,17 @@ body{
     margin-top:5px;
 }
 
+
+/* MAIN */
+
 .container{
-    max-width:1000px;
+    max-width:1100px;
     margin:auto;
     padding:55px 18px;
 }
+
+
+/* HEADING */
 
 .heading{
     text-align:center;
@@ -67,6 +77,7 @@ body{
 
 .heading p{
     color:#aaa;
+    font-size:17px;
 }
 
 .line{
@@ -105,59 +116,53 @@ body{
 }
 
 
-/* POSTS */
+/* POSTS GRID */
 
 .posts{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(3,1fr);
     gap:25px;
 }
+
+
+/* POST CARD */
 
 .post{
     background:linear-gradient(145deg,#181818,#0e0e0e);
     border:1px solid #6f5b20;
     border-radius:18px;
-    padding:28px 22px;
+    padding:12px;
     text-align:center;
     box-shadow:0 0 20px rgba(212,175,55,.08);
     transition:.3s;
+    overflow:hidden;
 }
 
 .post:hover{
     transform:translateY(-5px);
-    box-shadow:0 0 30px rgba(212,175,55,.18);
+    box-shadow:0 0 30px rgba(212,175,55,.20);
+}
+
+
+/* POST IMAGE */
+
+.post-link{
+    display:block;
+    text-decoration:none;
 }
 
 .post-image{
     width:100%;
-    border-radius:12px;
-    margin-bottom:18px;
-}
-
-.type{
-    color:#d4af37;
-    font-family:Arial,sans-serif;
-    font-size:12px;
-    letter-spacing:2px;
-    margin-bottom:12px;
-}
-
-.post h2{
-    color:#d4af37;
-    font-size:23px;
-}
-
-.post p{
-    color:#ddd;
-    font-size:18px;
-    line-height:1.9;
-}
-
-.author{
+    aspect-ratio:3 / 4;
+    object-fit:cover;
     display:block;
-    color:#888;
-    margin-top:18px;
-    font-size:14px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.post:hover .post-image{
+    transform:scale(1.02);
 }
 
 
@@ -176,21 +181,41 @@ body{
     text-decoration:none;
 }
 
+.back:hover{
+    background:#e5c454;
+}
+
 
 /* MOBILE */
 
-@media(max-width:600px){
+@media(max-width:800px){
+
+    .posts{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:550px){
 
     .heading h1{
         font-size:32px;
     }
 
-    .post p{
-        font-size:17px;
-    }
-
     .container{
         padding:40px 15px;
+    }
+
+    .posts{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .post{
+        max-width:500px;
+        width:100%;
+        margin:auto;
     }
 
 }
@@ -198,7 +223,11 @@ body{
 </style>
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header class="header">
 
@@ -213,7 +242,13 @@ body{
 </header>
 
 
+
+<!-- MAIN -->
+
 <main class="container">
+
+
+    <!-- HEADING -->
 
     <div class="heading">
 
@@ -228,128 +263,102 @@ body{
     </div>
 
 
+
     <!-- CATEGORY FILTER -->
 
     <div class="categories">
 
-        <button class="category active"
-                onclick="filterPosts('all',this)">
+        <button
+            class="category active"
+            onclick="filterPosts('all',this)">
             सभी
         </button>
 
-        <button class="category"
-                onclick="filterPosts('poem',this)">
+        <button
+            class="category"
+            onclick="filterPosts('poem',this)">
             ✍️ कविता
         </button>
 
-        <button class="category"
-                onclick="filterPosts('shayari',this)">
+        <button
+            class="category"
+            onclick="filterPosts('shayari',this)">
             ❤️ शायरी
         </button>
 
-        <button class="category"
-                onclick="filterPosts('thought',this)">
+        <button
+            class="category"
+            onclick="filterPosts('thought',this)">
             💭 सच्ची बातें
         </button>
 
     </div>
 
 
-    <!-- POSTS -->
+
+    <!-- ================= POSTS ================= -->
 
     <div class="posts">
 
 
-        <!-- POEM -->
+        <!-- POST 01 — MOTIVATIONAL -->
 
         <article class="post poem">
 
-            <div class="type">
-                ✍️ कविता
-            </div>
+            <a
+                href="images/saurabh_post_01_motivational.jpg"
+                target="_blank"
+                class="post-link">
 
-            <h2>
-                बस इस बार हो जाएगा
-            </h2>
+                <img
+                    src="images/saurabh_post_01_motivational.jpg"
+                    alt="बस इस बार हो जाएगा — Saurabh Verma"
+                    class="post-image"
+                >
 
-            <p>
-                बस इस बार हो जाएगा, हार मत मानो,<br>
-                थोड़ा और चलो, यूँ बीच राह में रुक मत जाना।<br><br>
-
-                जो सपना आँखों में सजाया है तुमने,<br>
-                उसे यूँ ही किस्मत के भरोसे छोड़ मत जाना।<br><br>
-
-                मुश्किलें हैं तो क्या हुआ,<br>
-                रास्ते भी तो बनेंगे,<br>
-                आज नहीं तो कल,<br>
-                ये दिन भी बदलेंगे।<br><br>
-
-                बस इस बार हो जाएगा…<br>
-                खुद पर विश्वास रखो,<br>
-                हार मत मानो। ❤️
-            </p>
-
-            <span class="author">
-                — Saurabh Verma
-            </span>
+            </a>
 
         </article>
 
 
-        <!-- SHAYARI -->
+
+        <!-- POST 02 — SHAYARI -->
 
         <article class="post shayari">
 
-            <div class="type">
-                ❤️ शायरी
-            </div>
+            <a
+                href="images/saurabh_post_02_shayari.jpg"
+                target="_blank"
+                class="post-link">
 
-            <h2>
-                कुछ शब्द...
-            </h2>
+                <img
+                    src="images/saurabh_post_02_shayari.jpg"
+                    alt="शायरी — Saurabh Verma"
+                    class="post-image"
+                >
 
-            <p>
-                कुछ शब्द अधूरे रह जाते हैं,<br>
-                जब भावनाएँ पूरी नहीं हो पातीं।<br><br>
-
-                कुछ रिश्ते पास होकर भी दूर होते हैं,<br>
-                और कुछ दूर होकर भी दिल के करीब होते हैं।
-            </p>
-
-            <span class="author">
-                — Saurabh Verma
-            </span>
+            </a>
 
         </article>
 
 
-        <!-- THOUGHT -->
+
+        <!-- POST 03 — KADVI SACHCHAI -->
 
         <article class="post thought">
 
-            <div class="type">
-                💭 कड़वी सच्चाई
-            </div>
+            <a
+                href="images/saurabh_post_03_kadvi_sachchai.jpg"
+                target="_blank"
+                class="post-link">
 
-            <h2>
-                झूठी देशभक्ति
-            </h2>
+                <img
+                    src="images/saurabh_post_03_kadvi_sachchai.jpg"
+                    alt="कड़वी सच्चाई — Saurabh Verma"
+                    class="post-image"
+                >
 
-            <p>
-                मुझे नहीं चाहिए झूठी देशभक्ति,<br>
-                जिसमें सिर्फ एक दिन देशभक्ति का खुमार हो।<br><br>
-
-                15 अगस्त आते ही तिरंगा लहराना<br>
-                और अगले दिन उसी तिरंगे को<br>
-                कचरे में फेंक देना।<br><br>
-
-                गिरे हुए तिरंगे को उठाने वाला<br>
-                फिर कोई नहीं दिखता।
-            </p>
-
-            <span class="author">
-                — Saurabh Verma
-            </span>
+            </a>
 
         </article>
 
@@ -357,38 +366,56 @@ body{
     </div>
 
 
+
+    <!-- BACK -->
+
     <a href="index.html" class="back">
         ← Home पर वापस
     </a>
 
+
 </main>
 
 
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
-function filterPosts(type,button){
+function filterPosts(type, button){
 
-    const posts=document.querySelectorAll(".post");
-    const buttons=document.querySelectorAll(".category");
+    const posts =
+        document.querySelectorAll(".post");
 
-    buttons.forEach(btn=>{
+    const buttons =
+        document.querySelectorAll(".category");
+
+
+    buttons.forEach(btn => {
         btn.classList.remove("active");
     });
 
     button.classList.add("active");
 
-    posts.forEach(post=>{
 
-        if(type==="all"){
-            post.style.display="block";
+    posts.forEach(post => {
+
+        if(type === "all"){
+
+            post.style.display = "";
+
         }
 
         else if(post.classList.contains(type)){
-            post.style.display="block";
+
+            post.style.display = "";
+
         }
 
         else{
-            post.style.display="none";
+
+            post.style.display = "none";
+
         }
 
     });
@@ -396,6 +423,7 @@ function filterPosts(type,button){
 }
 
 </script>
+
 
 </body>
 </html>
