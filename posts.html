@@ -1,1 +1,401 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Posts | SaurabhNovelist</title>
+
+<meta name="description"
+content="SaurabhNovelist की कविताएँ, शायरी और जिंदगी की सच्ची बातें।">
+
+<meta name="author" content="Saurabh Verma">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical"
+href="https://saurabhnovelist.github.io/posts.html">
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#0b0b0d;
+    color:#f5f1e8;
+    font-family:Georgia,"Noto Serif Devanagari",serif;
+}
+
+.header{
+    padding:20px;
+    text-align:center;
+    border-bottom:1px solid rgba(212,175,55,.3);
+    background:#080809;
+}
+
+.logo{
+    color:#d4af37;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.subtitle{
+    color:#999;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    margin-top:5px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:55px 18px;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.heading h1{
+    color:#d4af37;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.heading p{
+    color:#aaa;
+}
+
+.line{
+    width:70px;
+    height:2px;
+    background:#d4af37;
+    margin:18px auto;
+}
+
+
+/* CATEGORY BUTTONS */
+
+.categories{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:40px;
+}
+
+.category{
+    border:1px solid #6f5b20;
+    background:#111;
+    color:#ddd;
+    padding:10px 20px;
+    border-radius:25px;
+    cursor:pointer;
+    font-family:Arial,sans-serif;
+    transition:.3s;
+}
+
+.category:hover,
+.category.active{
+    background:#d4af37;
+    color:#111;
+}
+
+
+/* POSTS */
+
+.posts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.post{
+    background:linear-gradient(145deg,#181818,#0e0e0e);
+    border:1px solid #6f5b20;
+    border-radius:18px;
+    padding:28px 22px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(212,175,55,.08);
+    transition:.3s;
+}
+
+.post:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(212,175,55,.18);
+}
+
+.post-image{
+    width:100%;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.type{
+    color:#d4af37;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.post h2{
+    color:#d4af37;
+    font-size:23px;
+}
+
+.post p{
+    color:#ddd;
+    font-size:18px;
+    line-height:1.9;
+}
+
+.author{
+    display:block;
+    color:#888;
+    margin-top:18px;
+    font-size:14px;
+}
+
+
+/* BACK BUTTON */
+
+.back{
+    display:block;
+    width:max-content;
+    margin:45px auto 0;
+    padding:12px 25px;
+    background:#d4af37;
+    color:#111;
+    border-radius:25px;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .heading h1{
+        font-size:32px;
+    }
+
+    .post p{
+        font-size:17px;
+    }
+
+    .container{
+        padding:40px 15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        ✒ SaurabhNovelist
+    </div>
+
+    <div class="subtitle">
+        Where Words Become Emotions
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <div class="heading">
+
+        <h1>✍️ मेरी Posts</h1>
+
+        <div class="line"></div>
+
+        <p>
+            कविताएँ, शायरी और जिंदगी की सच्ची बातें
+        </p>
+
+    </div>
+
+
+    <!-- CATEGORY FILTER -->
+
+    <div class="categories">
+
+        <button class="category active"
+                onclick="filterPosts('all',this)">
+            सभी
+        </button>
+
+        <button class="category"
+                onclick="filterPosts('poem',this)">
+            ✍️ कविता
+        </button>
+
+        <button class="category"
+                onclick="filterPosts('shayari',this)">
+            ❤️ शायरी
+        </button>
+
+        <button class="category"
+                onclick="filterPosts('thought',this)">
+            💭 सच्ची बातें
+        </button>
+
+    </div>
+
+
+    <!-- POSTS -->
+
+    <div class="posts">
+
+
+        <!-- POEM -->
+
+        <article class="post poem">
+
+            <div class="type">
+                ✍️ कविता
+            </div>
+
+            <h2>
+                बस इस बार हो जाएगा
+            </h2>
+
+            <p>
+                बस इस बार हो जाएगा, हार मत मानो,<br>
+                थोड़ा और चलो, यूँ बीच राह में रुक मत जाना।<br><br>
+
+                जो सपना आँखों में सजाया है तुमने,<br>
+                उसे यूँ ही किस्मत के भरोसे छोड़ मत जाना।<br><br>
+
+                मुश्किलें हैं तो क्या हुआ,<br>
+                रास्ते भी तो बनेंगे,<br>
+                आज नहीं तो कल,<br>
+                ये दिन भी बदलेंगे।<br><br>
+
+                बस इस बार हो जाएगा…<br>
+                खुद पर विश्वास रखो,<br>
+                हार मत मानो। ❤️
+            </p>
+
+            <span class="author">
+                — Saurabh Verma
+            </span>
+
+        </article>
+
+
+        <!-- SHAYARI -->
+
+        <article class="post shayari">
+
+            <div class="type">
+                ❤️ शायरी
+            </div>
+
+            <h2>
+                कुछ शब्द...
+            </h2>
+
+            <p>
+                कुछ शब्द अधूरे रह जाते हैं,<br>
+                जब भावनाएँ पूरी नहीं हो पातीं।<br><br>
+
+                कुछ रिश्ते पास होकर भी दूर होते हैं,<br>
+                और कुछ दूर होकर भी दिल के करीब होते हैं।
+            </p>
+
+            <span class="author">
+                — Saurabh Verma
+            </span>
+
+        </article>
+
+
+        <!-- THOUGHT -->
+
+        <article class="post thought">
+
+            <div class="type">
+                💭 कड़वी सच्चाई
+            </div>
+
+            <h2>
+                झूठी देशभक्ति
+            </h2>
+
+            <p>
+                मुझे नहीं चाहिए झूठी देशभक्ति,<br>
+                जिसमें सिर्फ एक दिन देशभक्ति का खुमार हो।<br><br>
+
+                15 अगस्त आते ही तिरंगा लहराना<br>
+                और अगले दिन उसी तिरंगे को<br>
+                कचरे में फेंक देना।<br><br>
+
+                गिरे हुए तिरंगे को उठाने वाला<br>
+                फिर कोई नहीं दिखता।
+            </p>
+
+            <span class="author">
+                — Saurabh Verma
+            </span>
+
+        </article>
+
+
+    </div>
+
+
+    <a href="index.html" class="back">
+        ← Home पर वापस
+    </a>
+
+</main>
+
+
+<script>
+
+function filterPosts(type,button){
+
+    const posts=document.querySelectorAll(".post");
+    const buttons=document.querySelectorAll(".category");
+
+    buttons.forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    posts.forEach(post=>{
+
+        if(type==="all"){
+            post.style.display="block";
+        }
+
+        else if(post.classList.contains(type)){
+            post.style.display="block";
+        }
+
+        else{
+            post.style.display="none";
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
