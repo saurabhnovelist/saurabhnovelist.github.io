@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon" href="images/author.jpg">
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -33,6 +34,10 @@
             max-width: 1000px;
             margin: auto;
         }
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             text-align: center;
@@ -68,17 +73,23 @@
             color: #000;
         }
 
+        /* =========================
+           NOVEL INTRO
+        ========================= */
+
         .novel-intro {
             text-align: center;
-            padding: 35px 15px;
+            padding: 40px 15px 30px;
         }
 
         .cover {
-            width: 240px;
-            max-width: 80%;
-            border-radius: 8px;
+            width: 250px;
+            max-width: 85%;
+            border-radius: 12px;
             margin-bottom: 25px;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.18);
+            box-shadow:
+                0 0 25px rgba(212,175,55,.18),
+                0 0 60px rgba(212,175,55,.06);
         }
 
         h1 {
@@ -98,45 +109,158 @@
             color: #ccc;
         }
 
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
         .section-title {
             text-align: center;
             color: #d4af37;
             font-size: 25px;
-            margin: 35px 0 18px;
+            margin: 35px 0 20px;
         }
 
-        .preview-box {
-            background: #111;
-            border: 1px solid #3d3215;
-            border-radius: 12px;
-            padding: 12px;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+        .line {
+            width: 80px;
+            height: 2px;
+            background: #d4af37;
+            margin: 12px auto;
         }
 
-        .preview-box iframe {
-            width: 100%;
-            height: 750px;
-            border: none;
-            border-radius: 8px;
-            background: #222;
+        /* =========================
+           FREE PREVIEW CARD
+        ========================= */
+
+        .preview-card {
+            max-width: 820px;
+            margin: 25px auto 15px;
+
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            padding: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #191919,
+                    #0c0c0c
+                );
+
+            border: 1px solid #705d20;
+            border-radius: 18px;
+
+            box-shadow:
+                0 0 25px rgba(212,175,55,.10);
+        }
+
+        .preview-cover {
+            flex: 0 0 190px;
+            text-align: center;
+        }
+
+        .preview-cover img {
+            width: 180px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+
+            box-shadow:
+                0 0 20px rgba(212,175,55,.18);
+        }
+
+        .preview-content {
+            flex: 1;
+        }
+
+        .free-badge {
+            display: inline-block;
+
+            padding: 6px 14px;
+
+            border: 1px solid #d4af37;
+            border-radius: 20px;
+
+            color: #d4af37;
+            font-size: 13px;
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+        .preview-content h2 {
+            color: #e6c85c;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .preview-content p {
+            color: #bbb;
+            margin-bottom: 8px;
+        }
+
+        .preview-pages {
+            color: #d4af37 !important;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .read-preview-btn {
+            display: inline-block;
+
+            margin-top: 18px;
+
+            padding: 12px 25px;
+
+            background: #d4af37;
+            color: #111;
+
+            text-decoration: none;
+
+            border-radius: 28px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .read-preview-btn:hover {
+            background: #f0d36a;
+            transform: translateY(-2px);
         }
 
         .preview-note {
             text-align: center;
-            color: #aaa;
-            margin: 15px 0 30px;
-            font-size: 14px;
+            color: #777;
+            font-size: 13px;
+            margin: 15px 0 35px;
         }
 
+        /* =========================
+           LOCKED SECTION
+        ========================= */
+
         .locked-box {
-            margin: 40px auto;
+            margin: 45px auto;
             max-width: 700px;
+
             padding: 35px 25px;
+
             text-align: center;
-            background: linear-gradient(145deg, #151515, #0c0c0c);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #151515,
+                    #0c0c0c
+                );
+
             border: 1px solid #d4af37;
             border-radius: 15px;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.10);
+
+            box-shadow:
+                0 0 25px rgba(212,175,55,.10);
         }
 
         .lock-icon {
@@ -163,21 +287,31 @@
 
         .buy-btn {
             display: inline-block;
+
             padding: 12px 30px;
+
             border: none;
             border-radius: 30px;
+
             background: #d4af37;
             color: #000;
+
             font-size: 17px;
             font-weight: bold;
+
             cursor: pointer;
-            transition: 0.3s;
+
+            transition: .3s;
         }
 
         .buy-btn:hover {
             transform: scale(1.04);
             background: #f0d36a;
         }
+
+        /* =========================
+           REVIEWS
+        ========================= */
 
         .reviews-section {
             margin: 55px auto;
@@ -187,21 +321,32 @@
         .review-form {
             background: #111;
             border: 1px solid #3d3215;
+
             padding: 25px;
+
             border-radius: 12px;
+
             margin-bottom: 30px;
         }
 
         .review-form input,
         .review-form textarea,
         .review-form select {
+
             width: 100%;
+
             margin: 8px 0 15px;
+
             padding: 12px;
+
             background: #080808;
+
             border: 1px solid #444;
+
             color: #fff;
+
             border-radius: 7px;
+
             font-family: inherit;
         }
 
@@ -211,11 +356,17 @@
         }
 
         .review-form button {
+
             padding: 10px 22px;
+
             background: #d4af37;
+
             border: none;
+
             border-radius: 25px;
+
             cursor: pointer;
+
             font-weight: bold;
         }
 
@@ -225,10 +376,15 @@
         }
 
         .review-card {
+
             background: #111;
+
             border: 1px solid #302811;
+
             border-radius: 10px;
+
             padding: 18px;
+
             margin: 15px 0;
         }
 
@@ -257,11 +413,20 @@
             text-align: center;
         }
 
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
+
             text-align: center;
+
             padding: 35px 15px;
+
             border-top: 1px solid #3d3215;
+
             color: #777;
+
             margin-top: 50px;
         }
 
@@ -269,24 +434,60 @@
             color: #d4af37;
         }
 
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 700px) {
 
             h1 {
                 font-size: 28px;
             }
 
-            .preview-box iframe {
-                height: 600px;
+            .preview-card {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 25px 18px;
+
+                gap: 20px;
+            }
+
+            .preview-cover {
+                flex: none;
+            }
+
+            .preview-cover img {
+
+                width: 170px;
+
+                height: 225px;
+            }
+
+            .preview-content h2 {
+                font-size: 22px;
+            }
+
+            .read-preview-btn {
+                width: 100%;
+                max-width: 300px;
             }
 
             .locked-box {
                 padding: 28px 18px;
             }
         }
+
     </style>
 </head>
 
 <body>
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -300,7 +501,10 @@
 
     <div class="container">
 
-        <a href="novels.html" class="back-btn">
+        <a
+            href="novels.html"
+            class="back-btn"
+        >
             ← Novel Page पर वापस जाएँ
         </a>
 
@@ -311,7 +515,10 @@
 
 <main class="container">
 
-    <!-- NOVEL INTRO -->
+
+    <!-- =========================
+         NOVEL INTRO
+    ========================= -->
 
     <section class="novel-intro">
 
@@ -331,7 +538,11 @@
 
         <p class="intro-text">
 
-            कभी-कभी जिंदगी में कोई मुलाकात सिर्फ एक मुलाकात नहीं होती...
+            कभी-कभी जिंदगी में कोई मुलाकात
+            सिर्फ एक मुलाकात नहीं होती...
+
+            <br><br>
+
             वह हमारी पूरी जिंदगी की कहानी बन जाती है।
 
             <br><br>
@@ -344,31 +555,76 @@
     </section>
 
 
-    <!-- FREE PREVIEW -->
+    <!-- =========================
+         FREE PREVIEW
+    ========================= -->
 
     <section>
 
         <h2 class="section-title">
-            📖 पहले 20 पेज निःशुल्क पढ़ें
+            📖 Free Preview
         </h2>
 
-        <div class="preview-box">
+        <div class="line"></div>
 
-            <iframe
-                src="ek-anjan-mulakat-preview-20-pages.pdf#page=1"
-                title="एक अनजान मुलाकात — 20 पेज Free Preview"
-            ></iframe>
+
+        <div class="preview-card">
+
+
+            <div class="preview-cover">
+
+                <img
+                    src="images/ek-anjan-mulakat-book-cover.jpg"
+                    alt="एक अनजान मुलाकात Book Cover"
+                >
+
+            </div>
+
+
+            <div class="preview-content">
+
+                <span class="free-badge">
+                    ✨ FREE PREVIEW
+                </span>
+
+                <h2>
+                    एक अनजान मुलाकात
+                </h2>
+
+                <p>
+                    कहानी के शुरुआती <strong>20 पेज</strong>
+                    आप बिल्कुल निःशुल्क पढ़ सकते हैं।
+                </p>
+
+                <p class="preview-pages">
+                    📖 20 Pages • Free Reading
+                </p>
+
+                <a
+                    href="ek-anjan-mulakat-preview-20-pages.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="read-preview-btn"
+                >
+                    📖 20 पेज निःशुल्क पढ़ें
+                </a>
+
+            </div>
+
 
         </div>
 
+
         <p class="preview-note">
-            ✨ यह केवल शुरुआती 20 पेज का Free Preview है।
+            ✨ Preview केवल शुरुआती 20 पेज का है।
         </p>
 
     </section>
 
 
-    <!-- LOCKED CONTENT -->
+    <!-- =========================
+         LOCKED CONTENT
+    ========================= -->
 
     <section class="locked-box">
 
@@ -377,11 +633,12 @@
         </div>
 
         <h2>
-            आगे की कहानी पढ़ने के लिए
+            आगे की पूरी कहानी पढ़ें
         </h2>
 
         <p>
-            क्या शिवम और कविता की मुलाकात सिर्फ एक संयोग थी?
+            क्या शिवम और कविता की मुलाकात
+            सिर्फ एक संयोग थी?
         </p>
 
         <p>
@@ -406,13 +663,17 @@
     </section>
 
 
-    <!-- REVIEWS -->
+    <!-- =========================
+         REVIEWS
+    ========================= -->
 
     <section class="reviews-section">
 
         <h2 class="section-title">
             ⭐ पाठकों की राय
         </h2>
+
+        <div class="line"></div>
 
 
         <div class="review-form">
@@ -421,11 +682,13 @@
                 अपना Review लिखें
             </h3>
 
+
             <input
                 type="text"
                 id="reviewName"
                 placeholder="आपका नाम"
             >
+
 
             <select id="reviewRating">
 
@@ -451,14 +714,17 @@
 
             </select>
 
+
             <textarea
                 id="reviewComment"
                 placeholder="Novel के बारे में अपनी राय लिखें..."
             ></textarea>
 
+
             <button onclick="submitReview()">
                 Review Submit करें
             </button>
+
 
             <div
                 id="reviewMessage"
@@ -481,6 +747,10 @@
 </main>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
     <p>
@@ -494,7 +764,9 @@
 </footer>
 
 
-<!-- SUPABASE -->
+<!-- =========================
+     SUPABASE
+========================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -504,15 +776,8 @@
         "https://byzzwowcanhuxcvioomx.supabase.co";
 
 
-    /*
-       यहाँ अपने बाकी working pages वाली
-       वही Publishable Key लगाएँ।
-
-       Secret / Service Role Key यहाँ कभी न डालें।
-    */
-
     const SUPABASE_KEY =
-        "YOUR_EXISTING_PUBLISHABLE_KEY";
+        "sb_publishable_VK2m0y7kuseIyn3JV46ELg_HRrxHVcH";
 
 
     const supabaseClient =
@@ -526,9 +791,9 @@
         "एक अनजान मुलाकात";
 
 
-    // =========================
-    // PAYMENT PLACEHOLDER
-    // =========================
+    /* =========================
+       PAYMENT MESSAGE
+    ========================= */
 
     function showPaymentMessage() {
 
@@ -540,9 +805,9 @@
     }
 
 
-    // =========================
-    // LOAD REVIEWS
-    // =========================
+    /* =========================
+       LOAD REVIEWS
+    ========================= */
 
     async function loadReviews() {
 
@@ -660,9 +925,9 @@
     }
 
 
-    // =========================
-    // SUBMIT REVIEW
-    // =========================
+    /* =========================
+       SUBMIT REVIEW
+    ========================= */
 
     async function submitReview() {
 
@@ -758,9 +1023,9 @@
     }
 
 
-    // =========================
-    // HTML ESCAPE
-    // =========================
+    /* =========================
+       HTML ESCAPE
+    ========================= */
 
     function escapeHTML(value) {
 
@@ -779,9 +1044,9 @@
     }
 
 
-    // =========================
-    // START
-    // =========================
+    /* =========================
+       START
+    ========================= */
 
     loadReviews();
 
