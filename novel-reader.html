@@ -1,1283 +1,791 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>एक अनजान मुलाकात — Novel Reader | SaurabhNovelist</title>
 
-    <title>
-        एक अनजान मुलाकात | Novel Reader | SaurabhNovelist
-    </title>
+    <meta
+        name="description"
+        content="एक अनजान मुलाकात — SaurabhNovelist का हिंदी उपन्यास। पहले 20 पेज निःशुल्क पढ़ें।"
+    >
 
-    <meta name="description"
-          content="एक अनजान मुलाकात — Saurabh Verma द्वारा लिखा गया हिंदी उपन्यास। पहले 20 पेज निःशुल्क पढ़ें।">
-
-    <meta name="author"
-          content="Saurabh Verma">
-
-    <meta name="robots"
-          content="index, follow">
-
-    <link rel="icon"
-          type="image/jpeg"
-          href="images/author.jpg">
-
-    <link rel="apple-touch-icon"
-          href="images/author.jpg">
-
+    <link rel="icon" type="image/jpeg" href="images/author.jpg">
+    <link rel="apple-touch-icon" href="images/author.jpg">
 
     <style>
-
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-
 
         body {
-
-            margin: 0;
-
-            background:
-                radial-gradient(
-                    circle at top,
-                    #181818 0%,
-                    #080808 55%,
-                    #050505 100%
-                );
-
-            color: #f5f1e8;
-
-            font-family:
-                Georgia,
-                "Noto Serif Devanagari",
-                serif;
-
-            line-height: 1.7;
+            background: #080808;
+            color: #eee;
+            font-family: Georgia, "Noto Serif Devanagari", serif;
+            line-height: 1.8;
         }
 
-
-        .reader-page {
-
-            max-width: 950px;
-
+        .container {
+            width: 92%;
+            max-width: 1000px;
             margin: auto;
-
-            padding:
-                45px 18px 70px;
         }
 
-
-        /* HEADER */
-
-        .reader-header {
-
+        header {
             text-align: center;
-
-            margin-bottom: 35px;
+            padding: 35px 15px 25px;
+            border-bottom: 1px solid #3d3215;
         }
 
-
-        .brand {
-
+        .logo {
             color: #d4af37;
-
-            font-size: 15px;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 12px;
+            font-size: 30px;
+            font-weight: bold;
         }
 
-
-        .reader-header h1 {
-
-            color: #d4af37;
-
-            font-size: 40px;
-
-            margin: 0 0 8px;
-        }
-
-
-        .part {
-
+        .tagline {
             color: #aaa;
-
-            font-size: 17px;
+            font-size: 14px;
+            margin-top: 5px;
         }
 
-
-        /* COVER */
-
-        .cover-box {
-
-            text-align: center;
-
-            margin-bottom: 40px;
-        }
-
-
-        .cover-box img {
-
-            width: 100%;
-
-            max-width: 430px;
-
-            border-radius: 14px;
-
-            border: 1px solid #8f7420;
-
-            box-shadow:
-                0 0 30px rgba(212,175,55,0.15);
-        }
-
-
-        /* INTRO */
-
-        .intro {
-
-            background: #111;
-
-            border: 1px solid #333;
-
-            border-radius: 16px;
-
-            padding: 28px;
-
-            margin-bottom: 35px;
-
-            text-align: center;
-        }
-
-
-        .intro h2 {
-
-            color: #d4af37;
-
-            margin-top: 0;
-        }
-
-
-        .intro p {
-
-            color: #ddd;
-
-            font-size: 17px;
-        }
-
-
-        /* FREE PREVIEW */
-
-        .free-title {
-
-            text-align: center;
-
-            color: #d4af37;
-
-            margin:
-                35px 0 20px;
-        }
-
-
-        .preview-box {
-
-            background: #0e0e0e;
-
-            border:
-                1px solid #6f5a1b;
-
-            border-radius: 16px;
-
-            padding: 25px;
-
-            margin-bottom: 35px;
-        }
-
-
-        .preview-label {
-
+        .back-btn {
             display: inline-block;
-
-            background: #d4af37;
-
-            color: #080808;
-
-            padding:
-                7px 15px;
-
-            border-radius: 20px;
-
-            font-weight: bold;
-
-            margin-bottom: 20px;
-        }
-
-
-        .preview-info {
-
-            color: #bbb;
-
-            text-align: center;
-
-            margin-bottom: 20px;
-        }
-
-
-        /* PDF */
-
-        .pdf-container {
-
-            background: #222;
-
-            border-radius: 12px;
-
-            overflow: hidden;
-
-            border: 1px solid #333;
-        }
-
-
-        .pdf-container iframe {
-
-            display: block;
-
-            width: 100%;
-
-            height: 800px;
-
-            border: 0;
-        }
-
-
-        /* LOCK */
-
-        .lock-box {
-
-            position: relative;
-
-            margin:
-                35px 0;
-
-            padding:
-                45px 25px;
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #151515,
-                    #090909
-                );
-
-            border:
-                1px solid #d4af37;
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 0 25px rgba(212,175,55,0.08);
-        }
-
-
-        .lock-icon {
-
-            font-size: 45px;
-
-            margin-bottom: 10px;
-        }
-
-
-        .lock-box h2 {
-
+            margin-top: 20px;
+            padding: 9px 18px;
+            border: 1px solid #d4af37;
+            border-radius: 25px;
             color: #d4af37;
-
-            margin:
-                5px 0 10px;
-        }
-
-
-        .lock-box p {
-
-            color: #ccc;
-
-            max-width: 600px;
-
-            margin:
-                8px auto 22px;
-        }
-
-
-        .price {
-
-            color: #d4af37;
-
-            font-size: 32px;
-
-            font-weight: bold;
-
-            margin-bottom: 18px;
-        }
-
-
-        .buy-btn {
-
-            display: inline-block;
-
-            padding:
-                14px 32px;
-
-            background: #d4af37;
-
-            color: #080808;
-
-            border-radius: 30px;
-
             text-decoration: none;
-
-            font-weight: bold;
-
-            font-size: 17px;
-
-            border: none;
-
-            cursor: pointer;
-
             transition: 0.3s;
         }
 
-
-        .buy-btn:hover {
-
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 5px 20px
-                rgba(212,175,55,0.25);
+        .back-btn:hover {
+            background: #d4af37;
+            color: #000;
         }
 
-
-        .secure-note {
-
-            color: #777;
-
-            font-size: 12px;
-
-            margin-top: 15px;
-        }
-
-
-        /* REVIEWS */
-
-        .reviews-section {
-
-            max-width: 750px;
-
-            margin:
-                60px auto 0;
-        }
-
-
-        .reviews-section h2 {
-
+        .novel-intro {
             text-align: center;
+            padding: 35px 15px;
+        }
 
-            color: #d4af37;
-
+        .cover {
+            width: 240px;
+            max-width: 80%;
+            border-radius: 8px;
             margin-bottom: 25px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.18);
         }
 
-
-        .review-form {
-
-            background: #111;
-
-            border:
-                1px solid #333;
-
-            border-radius: 16px;
-
-            padding: 25px;
-
-            margin-bottom: 35px;
-        }
-
-
-        .review-form input,
-        .review-form textarea {
-
-            width: 100%;
-
-            background: #080808;
-
-            color: white;
-
-            border:
-                1px solid #444;
-
-            border-radius: 10px;
-
-            padding: 13px;
-
-            margin-bottom: 15px;
-
-            font-family: inherit;
-
-            outline: none;
-        }
-
-
-        .review-form input:focus,
-        .review-form textarea:focus {
-
-            border-color: #d4af37;
-        }
-
-
-        .review-form textarea {
-
-            min-height: 110px;
-
-            resize: vertical;
-        }
-
-
-        .rating-title {
-
+        h1 {
             color: #d4af37;
-
+            font-size: 34px;
             margin-bottom: 8px;
         }
 
-
-        .stars {
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 7px;
-
-            margin:
-                8px 0 20px;
-        }
-
-
-        .star {
-
-            font-size: 30px;
-
-            color: #555;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-
-        .star.active {
-
-            color: #d4af37;
-        }
-
-
-        .submit-review {
-
-            display: block;
-
-            width: 100%;
-
-            background: #d4af37;
-
-            color: #080808;
-
-            border: none;
-
-            border-radius: 25px;
-
-            padding: 13px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
+        .author {
+            color: #aaa;
             font-size: 16px;
         }
 
-
-        /* REVIEW CARD */
-
-        .novel-review {
-
-            background: #151515;
-
-            border:
-                1px solid #6f5a1b;
-
-            border-radius: 15px;
-
-            padding: 20px;
-
-            margin:
-                15px 0;
+        .intro-text {
+            max-width: 750px;
+            margin: 20px auto 0;
+            color: #ccc;
         }
 
-
-        .novel-review-name {
-
+        .section-title {
+            text-align: center;
             color: #d4af37;
+            font-size: 25px;
+            margin: 35px 0 18px;
+        }
 
-            font-size: 18px;
+        .preview-box {
+            background: #111;
+            border: 1px solid #3d3215;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+        }
 
+        .preview-box iframe {
+            width: 100%;
+            height: 750px;
+            border: none;
+            border-radius: 8px;
+            background: #222;
+        }
+
+        .preview-note {
+            text-align: center;
+            color: #aaa;
+            margin: 15px 0 30px;
+            font-size: 14px;
+        }
+
+        .locked-box {
+            margin: 40px auto;
+            max-width: 700px;
+            padding: 35px 25px;
+            text-align: center;
+            background: linear-gradient(145deg, #151515, #0c0c0c);
+            border: 1px solid #d4af37;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.10);
+        }
+
+        .lock-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .locked-box h2 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .locked-box p {
+            color: #ccc;
+            margin: 8px 0;
+        }
+
+        .price {
+            font-size: 30px;
+            color: #d4af37;
+            font-weight: bold;
+            margin: 18px 0;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #d4af37;
+            color: #000;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.04);
+            background: #f0d36a;
+        }
+
+        .reviews-section {
+            margin: 55px auto;
+            max-width: 800px;
+        }
+
+        .review-form {
+            background: #111;
+            border: 1px solid #3d3215;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .review-form input,
+        .review-form textarea,
+        .review-form select {
+            width: 100%;
+            margin: 8px 0 15px;
+            padding: 12px;
+            background: #080808;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 7px;
+            font-family: inherit;
+        }
+
+        .review-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .review-form button {
+            padding: 10px 22px;
+            background: #d4af37;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
             font-weight: bold;
         }
 
-
-        .novel-review-stars {
-
+        .review-message {
             color: #d4af37;
-
-            font-size: 20px;
-
-            margin:
-                6px 0;
+            margin-top: 12px;
         }
 
-
-        .novel-review-comment {
-
-            color: #ddd;
-
-            line-height: 1.7;
+        .review-card {
+            background: #111;
+            border: 1px solid #302811;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 15px 0;
         }
 
+        .review-name {
+            color: #d4af37;
+            font-weight: bold;
+        }
 
-        .novel-review-date {
+        .stars {
+            color: #d4af37;
+            margin: 4px 0;
+        }
 
+        .review-date {
             color: #777;
-
             font-size: 12px;
+        }
 
+        .review-comment {
+            color: #ccc;
             margin-top: 8px;
         }
 
+        .empty-reviews {
+            color: #888;
+            text-align: center;
+        }
 
-        /* BACK */
+        footer {
+            text-align: center;
+            padding: 35px 15px;
+            border-top: 1px solid #3d3215;
+            color: #777;
+            margin-top: 50px;
+        }
 
-        .back {
-
-            display: block;
-
-            width: fit-content;
-
-            margin:
-                45px auto 0;
-
-            padding:
-                11px 24px;
-
-            border:
-                1px solid #d4af37;
-
-            border-radius: 25px;
-
+        footer strong {
             color: #d4af37;
-
-            text-decoration: none;
         }
 
+        @media (max-width: 700px) {
 
-        /* MOBILE */
-
-        @media (max-width: 600px) {
-
-            .reader-page {
-
-                padding:
-                    30px 13px 50px;
+            h1 {
+                font-size: 28px;
             }
 
-
-            .reader-header h1 {
-
-                font-size: 30px;
+            .preview-box iframe {
+                height: 600px;
             }
 
-
-            .intro {
-
-                padding: 20px;
+            .locked-box {
+                padding: 28px 18px;
             }
-
-
-            .preview-box {
-
-                padding: 15px;
-            }
-
-
-            .pdf-container iframe {
-
-                height: 650px;
-            }
-
-
-            .lock-box {
-
-                padding:
-                    35px 18px;
-            }
-
-
-            .lock-box h2 {
-
-                font-size: 23px;
-            }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+<header>
 
-<main class="reader-page">
+    <div class="logo">
+        SaurabhNovelist
+    </div>
+
+    <div class="tagline">
+        शब्दों से भावनाओं तक...
+    </div>
+
+    <div class="container">
+
+        <a href="novels.html" class="back-btn">
+            ← Novel Page पर वापस जाएँ
+        </a>
+
+    </div>
+
+</header>
 
 
-    <!-- HEADER -->
+<main class="container">
 
-    <header class="reader-header">
+    <!-- NOVEL INTRO -->
 
-        <div class="brand">
-            ✒ SAURABH NOVELIST
-        </div>
+    <section class="novel-intro">
+
+        <img
+            src="images/ek-anjan-mulakat-book-cover.jpg"
+            alt="एक अनजान मुलाकात — Novel Cover"
+            class="cover"
+        >
 
         <h1>
             एक अनजान मुलाकात
         </h1>
 
-        <div class="part">
-            Part 1 • Novel Reader
+        <div class="author">
+            ✍️ Saurabh Verma
         </div>
 
-    </header>
+        <p class="intro-text">
 
+            कभी-कभी जिंदगी में कोई मुलाकात सिर्फ एक मुलाकात नहीं होती...
+            वह हमारी पूरी जिंदगी की कहानी बन जाती है।
 
+            <br><br>
 
-    <!-- COVER -->
+            पढ़िए <strong>एक अनजान मुलाकात</strong> —
+            एक भावनात्मक हिंदी उपन्यास।
 
-    <div class="cover-box">
-
-        <img
-            src="images/ek-anjan-mulakat-book-cover.jpg"
-            alt="एक अनजान मुलाकात — SaurabhNovelist"
-        >
-
-    </div>
-
-
-
-    <!-- INTRO -->
-
-    <section class="intro">
-
-        <h2>
-            एक कहानी...
-        </h2>
-
-        <p>
-            कुछ मुलाकातें सिर्फ मुलाकातें नहीं होतीं,
-            वे जिंदगी की एक नई कहानी की शुरुआत बन जाती हैं।
         </p>
-
-        <p>
-            दो अजनबी...
-            एक मुलाकात...
-            और फिर एक ऐसी कहानी,
-            जिसे शायद किस्मत पहले से लिख चुकी थी।
-        </p>
-
-        <strong style="color:#d4af37;">
-            — Saurabh Verma
-        </strong>
 
     </section>
-
 
 
     <!-- FREE PREVIEW -->
 
-    <h2 class="free-title">
-        📖 पहले 20 पेज — FREE PREVIEW
-    </h2>
+    <section>
 
+        <h2 class="section-title">
+            📖 पहले 20 पेज निःशुल्क पढ़ें
+        </h2>
 
-    <section class="preview-box">
-
-        <div style="text-align:center;">
-
-            <span class="preview-label">
-                ✦ 20 PAGES FREE
-            </span>
-
-        </div>
-
-
-        <p class="preview-info">
-
-            कहानी के पहले 20 पन्ने निःशुल्क पढ़ें।
-            अगर कहानी आपको पसंद आए,
-            तो आगे की पूरी कहानी पढ़ सकते हैं।
-
-        </p>
-
-
-        <div class="pdf-container">
+        <div class="preview-box">
 
             <iframe
-                src="ek-anjan-mulakat-part-1.pdf#page=1"
-                title="एक अनजान मुलाकात — Free Preview">
-            </iframe>
+                src="ek-anjan-mulakat-preview-20-pages.pdf#page=1"
+                title="एक अनजान मुलाकात — 20 पेज Free Preview"
+            ></iframe>
 
         </div>
+
+        <p class="preview-note">
+            ✨ यह केवल शुरुआती 20 पेज का Free Preview है।
+        </p>
 
     </section>
 
 
+    <!-- LOCKED CONTENT -->
 
-    <!-- LOCKED SECTION -->
-
-    <section class="lock-box">
+    <section class="locked-box">
 
         <div class="lock-icon">
             🔒
         </div>
 
-
         <h2>
-            कहानी अभी बाकी है...
+            आगे की कहानी पढ़ने के लिए
         </h2>
 
-
         <p>
-
-            आपने कहानी के पहले 20 पन्ने पढ़ लिए।
-            अब शिवम और कविता की कहानी
-            किस मोड़ पर जाती है,
-            यह जानने के लिए पूरी कहानी पढ़ें।
-
+            क्या शिवम और कविता की मुलाकात सिर्फ एक संयोग थी?
         </p>
 
+        <p>
+            कहानी आगे किस मोड़ पर जाएगी?
+        </p>
 
         <div class="price">
             ₹49
         </div>
 
-
         <button
             class="buy-btn"
-            onclick="showPaymentMessage()">
-
-            ❤️ पूरी कहानी पढ़ें — ₹49
-
+            onclick="showPaymentMessage()"
+        >
+            📖 पूरी Novel पढ़ें — ₹49
         </button>
 
-
-        <div class="secure-note">
-
-            Secure payment & verified access will be connected here.
-
-        </div>
+        <p style="color:#777; font-size:12px; margin-top:15px;">
+            Secure payment & digital access system जल्द उपलब्ध होगा।
+        </p>
 
     </section>
-
 
 
     <!-- REVIEWS -->
 
     <section class="reviews-section">
 
-        <h2>
-            💬 पाठकों की राय
+        <h2 class="section-title">
+            ⭐ पाठकों की राय
         </h2>
 
 
-        <!-- REVIEW FORM -->
-
         <div class="review-form">
+
+            <h3 style="color:#d4af37;">
+                अपना Review लिखें
+            </h3>
 
             <input
                 type="text"
                 id="reviewName"
-                placeholder="अपना नाम लिखें"
-                maxlength="50"
+                placeholder="आपका नाम"
             >
 
+            <select id="reviewRating">
 
-            <div class="rating-title">
-                आपकी Rating
-            </div>
+                <option value="5">
+                    ★★★★★ — 5/5
+                </option>
 
+                <option value="4">
+                    ★★★★☆ — 4/5
+                </option>
 
-            <div class="stars">
+                <option value="3">
+                    ★★★☆☆ — 3/5
+                </option>
 
-                <span
-                    class="star"
-                    data-rating="1">★</span>
+                <option value="2">
+                    ★★☆☆☆ — 2/5
+                </option>
 
-                <span
-                    class="star"
-                    data-rating="2">★</span>
+                <option value="1">
+                    ★☆☆☆☆ — 1/5
+                </option>
 
-                <span
-                    class="star"
-                    data-rating="3">★</span>
-
-                <span
-                    class="star"
-                    data-rating="4">★</span>
-
-                <span
-                    class="star"
-                    data-rating="5">★</span>
-
-            </div>
-
+            </select>
 
             <textarea
                 id="reviewComment"
                 placeholder="Novel के बारे में अपनी राय लिखें..."
-                maxlength="500">
-            </textarea>
+            ></textarea>
 
-
-            <button
-                class="submit-review"
-                onclick="submitReview()">
-
-                Review भेजें
-
+            <button onclick="submitReview()">
+                Review Submit करें
             </button>
+
+            <div
+                id="reviewMessage"
+                class="review-message"
+            ></div>
 
         </div>
 
 
+        <div id="reviewsList">
 
-        <!-- REVIEWS -->
-
-        <div id="novelReviews">
-
-            <p style="text-align:center;color:#777;">
+            <div class="empty-reviews">
                 Reviews लोड हो रहे हैं...
-            </p>
+            </div>
 
         </div>
 
     </section>
 
-
-
-    <!-- BACK -->
-
-    <a
-        class="back"
-        href="novels.html">
-
-        ← Novel Page पर वापस
-
-    </a>
-
-
 </main>
 
+
+<footer>
+
+    <p>
+        © 2026 <strong>SaurabhNovelist</strong>
+    </p>
+
+    <p>
+        एक कहानी... एक मुलाकात... एक जिंदगी।
+    </p>
+
+</footer>
 
 
 <!-- SUPABASE -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-
 <script>
 
-
-const SUPABASE_URL =
-"https://byzzwowcanhuxcvioomx.supabase.co";
-
-
-const SUPABASE_KEY =
-"sb_publishable_VK2m0y7kuseIyn2JV46ELg_hRrxHVcH";
+    const SUPABASE_URL =
+        "https://byzzwowcanhuxcvioomx.supabase.co";
 
 
-const supabaseClient =
-supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
+    /*
+       यहाँ अपने बाकी working pages वाली
+       वही Publishable Key लगाएँ।
+
+       Secret / Service Role Key यहाँ कभी न डालें।
+    */
+
+    const SUPABASE_KEY =
+        "YOUR_EXISTING_PUBLISHABLE_KEY";
 
 
-
-/* RATING */
-
-let selectedRating = 0;
-
-
-document
-.querySelectorAll(".star")
-.forEach(star => {
-
-    star.addEventListener(
-        "click",
-        function() {
-
-            selectedRating =
-                Number(
-                    this.dataset.rating
-                );
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
 
 
-            document
-            .querySelectorAll(".star")
-            .forEach(s => {
+    const NOVEL_NAME =
+        "एक अनजान मुलाकात";
 
-                const rating =
-                    Number(
-                        s.dataset.rating
-                    );
 
-                if (
-                    rating <= selectedRating
-                ) {
+    // =========================
+    // PAYMENT PLACEHOLDER
+    // =========================
 
-                    s.classList.add(
-                        "active"
-                    );
+    function showPaymentMessage() {
 
-                } else {
+        alert(
+            "₹49 का Secure Payment System अभी setup होना बाकी है।\n\n" +
+            "Payment verification के बाद ही पूरी Novel का access दिया जाएगा।"
+        );
 
-                    s.classList.remove(
-                        "active"
-                    );
+    }
 
-                }
 
+    // =========================
+    // LOAD REVIEWS
+    // =========================
+
+    async function loadReviews() {
+
+        const reviewsList =
+            document.getElementById("reviewsList");
+
+
+        const {
+            data,
+            error
+        } = await supabaseClient
+
+            .from("novel_reviews")
+
+            .select("*")
+
+            .eq("novel", NOVEL_NAME)
+
+            .order("created_at", {
+                ascending: false
             });
 
+
+        if (error) {
+
+            console.error(
+                "Review loading error:",
+                error
+            );
+
+            reviewsList.innerHTML =
+                `
+                <div class="empty-reviews">
+                    Reviews अभी load नहीं हो पाए।
+                </div>
+                `;
+
+            return;
         }
-    );
-
-});
 
 
+        if (!data || data.length === 0) {
 
-/* SUBMIT REVIEW */
+            reviewsList.innerHTML =
+                `
+                <div class="empty-reviews">
+                    अभी कोई Review नहीं है।
+                    पहला Review आप लिखें ❤️
+                </div>
+                `;
 
-async function submitReview() {
-
-
-    const name =
-        document
-        .getElementById("reviewName")
-        .value
-        .trim();
-
-
-    const comment =
-        document
-        .getElementById("reviewComment")
-        .value
-        .trim();
+            return;
+        }
 
 
-    if (!name) {
+        reviewsList.innerHTML = "";
 
-        alert(
-            "कृपया अपना नाम लिखें।"
-        );
 
-        return;
+        data.forEach(review => {
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "review-card";
+
+
+            const rating =
+                Number(review.rating) || 0;
+
+
+            const stars =
+                "★".repeat(rating) +
+                "☆".repeat(5 - rating);
+
+
+            const date =
+                review.created_at
+                    ? new Date(
+                        review.created_at
+                    ).toLocaleDateString("hi-IN")
+                    : "";
+
+
+            card.innerHTML = `
+
+                <div class="review-name">
+                    ${escapeHTML(
+                        review.name || "Anonymous"
+                    )}
+                </div>
+
+                <div class="stars">
+                    ${stars}
+                </div>
+
+                <div class="review-comment">
+                    ${escapeHTML(
+                        review.comment || ""
+                    )}
+                </div>
+
+                <div class="review-date">
+                    ${date}
+                </div>
+
+            `;
+
+
+            reviewsList.appendChild(card);
+
+        });
+
     }
 
 
-    if (selectedRating === 0) {
+    // =========================
+    // SUBMIT REVIEW
+    // =========================
 
-        alert(
-            "कृपया Rating चुनें।"
-        );
+    async function submitReview() {
 
-        return;
-    }
-
-
-    if (!comment) {
-
-        alert(
-            "कृपया अपना Review लिखें।"
-        );
-
-        return;
-    }
-
-
-
-    const { error } =
-        await supabaseClient
-
-        .from("novel_reviews")
-
-        .insert([{
-
-            novel:
-                "एक अनजान मुलाकात",
-
-            name:
-                name,
-
-            rating:
-                selectedRating,
-
-            comment:
-                comment
-
-        }]);
-
-
-    if (error) {
-
-        console.error(error);
-
-        alert(
-            "Review भेजने में समस्या हुई।"
-        );
-
-        return;
-    }
-
-
-    alert(
-        "आपका Review सफलतापूर्वक भेज दिया गया ❤️"
-    );
-
-
-    document
-    .getElementById("reviewName")
-    .value = "";
-
-
-    document
-    .getElementById("reviewComment")
-    .value = "";
-
-
-    selectedRating = 0;
-
-
-    document
-    .querySelectorAll(".star")
-    .forEach(s => {
-
-        s.classList.remove(
-            "active"
-        );
-
-    });
-
-
-    loadNovelReviews();
-
-}
-
-
-
-/* LOAD REVIEWS */
-
-async function loadNovelReviews() {
-
-
-    const box =
-        document
-        .getElementById(
-            "novelReviews"
-        );
-
-
-    const { data, error } =
-        await supabaseClient
-
-        .from("novel_reviews")
-
-        .select("*")
-
-        .eq(
-            "novel",
-            "एक अनजान मुलाकात"
-        )
-
-        .order(
-            "created_at",
-            {
-                ascending: false
-            }
-        );
-
-
-    if (error) {
-
-        console.error(error);
-
-        box.innerHTML =
-
-            "<p style='text-align:center;color:#777;'>Reviews लोड नहीं हो सके।</p>";
-
-        return;
-    }
-
-
-    if (
-        !data ||
-        data.length === 0
-    ) {
-
-        box.innerHTML =
-
-            "<p style='text-align:center;color:#777;'>अभी कोई Review नहीं है।</p>";
-
-        return;
-    }
-
-
-    box.innerHTML = "";
-
-
-    data.forEach(review => {
+        const name =
+            document
+                .getElementById("reviewName")
+                .value
+                .trim();
 
 
         const rating =
-            Number(review.rating) || 0;
-
-
-        const stars =
-
-            "★".repeat(rating) +
-
-            "☆".repeat(
-                5 - rating
+            Number(
+                document
+                    .getElementById("reviewRating")
+                    .value
             );
 
 
-        const date =
-            review.created_at
-
-            ? new Date(
-                review.created_at
-              )
-              .toLocaleDateString(
-                "hi-IN"
-              )
-
-            : "";
+        const comment =
+            document
+                .getElementById("reviewComment")
+                .value
+                .trim();
 
 
-        const div =
-            document.createElement(
-                "div"
+        const message =
+            document.getElementById(
+                "reviewMessage"
             );
 
 
-        div.className =
-            "novel-review";
+        if (!name || !comment) {
+
+            message.textContent =
+                "कृपया नाम और Review दोनों लिखें।";
+
+            return;
+        }
 
 
-        div.innerHTML = `
-
-            <div class="novel-review-name">
-
-                👤 ${escapeHTML(
-                    review.name
-                )}
-
-            </div>
+        message.textContent =
+            "Review submit हो रहा है...";
 
 
-            <div class="novel-review-stars">
+        const {
+            error
+        } = await supabaseClient
 
-                ${stars}
+            .from("novel_reviews")
 
-            </div>
+            .insert([
 
+                {
+                    novel: NOVEL_NAME,
+                    name: name,
+                    rating: rating,
+                    comment: comment
+                }
 
-            <div class="novel-review-comment">
-
-                ${escapeHTML(
-                    review.comment
-                )}
-
-            </div>
-
-
-            <div class="novel-review-date">
-
-                ${date}
-
-            </div>
-
-        `;
+            ]);
 
 
-        box.appendChild(div);
+        if (error) {
 
-    });
+            console.error(
+                "Review submit error:",
+                error
+            );
 
-}
+            message.textContent =
+                "Review submit नहीं हो पाया। थोड़ी देर बाद फिर कोशिश करें।";
 
-
-
-/* SECURITY */
-
-function escapeHTML(text) {
-
-
-    const div =
-        document.createElement(
-            "div"
-        );
+            return;
+        }
 
 
-    div.textContent =
-        text;
+        message.textContent =
+            "❤️ आपका Review successfully submit हो गया।";
 
 
-    return div.innerHTML;
-
-}
-
-
-
-/* PAYMENT PLACEHOLDER */
-
-function showPaymentMessage() {
-
-    alert(
-        "₹49 वाला secure payment system अभी connect होना बाकी है।"
-    );
-
-}
+        document
+            .getElementById("reviewName")
+            .value = "";
 
 
+        document
+            .getElementById("reviewComment")
+            .value = "";
 
-/* LOAD */
 
-loadNovelReviews();
+        await loadReviews();
 
+    }
+
+
+    // =========================
+    // HTML ESCAPE
+    // =========================
+
+    function escapeHTML(value) {
+
+        return String(value)
+
+            .replace(/&/g, "&amp;")
+
+            .replace(/</g, "&lt;")
+
+            .replace(/>/g, "&gt;")
+
+            .replace(/"/g, "&quot;")
+
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    // =========================
+    // START
+    // =========================
+
+    loadReviews();
 
 </script>
 
-
 </body>
-
 </html>
