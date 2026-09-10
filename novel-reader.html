@@ -35,10 +35,6 @@
             margin: auto;
         }
 
-        /* =========================
-           HEADER
-        ========================= */
-
         header {
             text-align: center;
             padding: 35px 15px 25px;
@@ -73,10 +69,6 @@
             color: #000;
         }
 
-        /* =========================
-           NOVEL INTRO
-        ========================= */
-
         .novel-intro {
             text-align: center;
             padding: 40px 15px 30px;
@@ -109,10 +101,6 @@
             color: #ccc;
         }
 
-        /* =========================
-           SECTION TITLE
-        ========================= */
-
         .section-title {
             text-align: center;
             color: #d4af37;
@@ -127,9 +115,7 @@
             margin: 12px auto;
         }
 
-        /* =========================
-           FREE PREVIEW CARD
-        ========================= */
+        /* FREE PREVIEW */
 
         .preview-card {
             max-width: 820px;
@@ -176,16 +162,12 @@
 
         .free-badge {
             display: inline-block;
-
             padding: 6px 14px;
-
             border: 1px solid #d4af37;
             border-radius: 20px;
-
             color: #d4af37;
             font-size: 13px;
             font-weight: bold;
-
             margin-bottom: 12px;
         }
 
@@ -208,20 +190,13 @@
 
         .read-preview-btn {
             display: inline-block;
-
             margin-top: 18px;
-
             padding: 12px 25px;
-
             background: #d4af37;
             color: #111;
-
             text-decoration: none;
-
             border-radius: 28px;
-
             font-weight: bold;
-
             transition: .3s;
         }
 
@@ -237,9 +212,7 @@
             margin: 15px 0 35px;
         }
 
-        /* =========================
-           LOCKED SECTION
-        ========================= */
+        /* PAYMENT */
 
         .locked-box {
             margin: 45px auto;
@@ -309,9 +282,13 @@
             background: #f0d36a;
         }
 
-        /* =========================
-           REVIEWS
-        ========================= */
+        .payment-status {
+            margin-top: 15px;
+            color: #d4af37;
+            font-size: 14px;
+        }
+
+        /* REVIEWS */
 
         .reviews-section {
             margin: 55px auto;
@@ -321,32 +298,21 @@
         .review-form {
             background: #111;
             border: 1px solid #3d3215;
-
             padding: 25px;
-
             border-radius: 12px;
-
             margin-bottom: 30px;
         }
 
         .review-form input,
         .review-form textarea,
         .review-form select {
-
             width: 100%;
-
             margin: 8px 0 15px;
-
             padding: 12px;
-
             background: #080808;
-
             border: 1px solid #444;
-
             color: #fff;
-
             border-radius: 7px;
-
             font-family: inherit;
         }
 
@@ -356,17 +322,11 @@
         }
 
         .review-form button {
-
             padding: 10px 22px;
-
             background: #d4af37;
-
             border: none;
-
             border-radius: 25px;
-
             cursor: pointer;
-
             font-weight: bold;
         }
 
@@ -376,15 +336,10 @@
         }
 
         .review-card {
-
             background: #111;
-
             border: 1px solid #302811;
-
             border-radius: 10px;
-
             padding: 18px;
-
             margin: 15px 0;
         }
 
@@ -413,30 +368,17 @@
             text-align: center;
         }
 
-        /* =========================
-           FOOTER
-        ========================= */
-
         footer {
-
             text-align: center;
-
             padding: 35px 15px;
-
             border-top: 1px solid #3d3215;
-
             color: #777;
-
             margin-top: 50px;
         }
 
         footer strong {
             color: #d4af37;
         }
-
-        /* =========================
-           MOBILE
-        ========================= */
 
         @media (max-width: 700px) {
 
@@ -445,13 +387,9 @@
             }
 
             .preview-card {
-
                 flex-direction: column;
-
                 text-align: center;
-
                 padding: 25px 18px;
-
                 gap: 20px;
             }
 
@@ -460,9 +398,7 @@
             }
 
             .preview-cover img {
-
                 width: 170px;
-
                 height: 225px;
             }
 
@@ -478,16 +414,17 @@
             .locked-box {
                 padding: 28px 18px;
             }
+
+            .buy-btn {
+                width: 100%;
+                max-width: 320px;
+            }
         }
 
     </style>
 </head>
 
 <body>
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -515,10 +452,7 @@
 
 <main class="container">
 
-
-    <!-- =========================
-         NOVEL INTRO
-    ========================= -->
+    <!-- NOVEL INTRO -->
 
     <section class="novel-intro">
 
@@ -555,9 +489,7 @@
     </section>
 
 
-    <!-- =========================
-         FREE PREVIEW
-    ========================= -->
+    <!-- FREE PREVIEW -->
 
     <section>
 
@@ -567,9 +499,7 @@
 
         <div class="line"></div>
 
-
         <div class="preview-card">
-
 
             <div class="preview-cover">
 
@@ -579,7 +509,6 @@
                 >
 
             </div>
-
 
             <div class="preview-content">
 
@@ -611,9 +540,7 @@
 
             </div>
 
-
         </div>
-
 
         <p class="preview-note">
             ✨ Preview केवल शुरुआती 20 पेज का है।
@@ -622,9 +549,7 @@
     </section>
 
 
-    <!-- =========================
-         LOCKED CONTENT
-    ========================= -->
+    <!-- LOCKED CONTENT / PAYMENT -->
 
     <section class="locked-box">
 
@@ -650,22 +575,25 @@
         </div>
 
         <button
+            id="rzp-button"
             class="buy-btn"
-            onclick="showPaymentMessage()"
         >
             📖 पूरी Novel पढ़ें — ₹49
         </button>
 
+        <div
+            id="paymentStatus"
+            class="payment-status"
+        ></div>
+
         <p style="color:#777; font-size:12px; margin-top:15px;">
-            Secure payment & digital access system जल्द उपलब्ध होगा।
+            🔐 Razorpay Test Mode — अभी कोई real payment नहीं होगा।
         </p>
 
     </section>
 
 
-    <!-- =========================
-         REVIEWS
-    ========================= -->
+    <!-- REVIEWS -->
 
     <section class="reviews-section">
 
@@ -675,20 +603,17 @@
 
         <div class="line"></div>
 
-
         <div class="review-form">
 
             <h3 style="color:#d4af37;">
                 अपना Review लिखें
             </h3>
 
-
             <input
                 type="text"
                 id="reviewName"
                 placeholder="आपका नाम"
             >
-
 
             <select id="reviewRating">
 
@@ -714,17 +639,14 @@
 
             </select>
 
-
             <textarea
                 id="reviewComment"
                 placeholder="Novel के बारे में अपनी राय लिखें..."
             ></textarea>
 
-
             <button onclick="submitReview()">
                 Review Submit करें
             </button>
-
 
             <div
                 id="reviewMessage"
@@ -732,7 +654,6 @@
             ></div>
 
         </div>
-
 
         <div id="reviewsList">
 
@@ -747,10 +668,6 @@
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
     <p>
@@ -764,13 +681,140 @@
 </footer>
 
 
-<!-- =========================
-     SUPABASE
-========================= -->
+<!-- RAZORPAY CHECKOUT -->
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+<!-- SUPABASE -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+
 <script>
+
+    /* =====================================================
+       RAZORPAY TEST MODE
+    ===================================================== */
+
+    const RAZORPAY_KEY =
+        "rzp_test_TaAFGQjcNzLci7";
+
+
+    const rzpButton =
+        document.getElementById("rzp-button");
+
+
+    const paymentStatus =
+        document.getElementById("paymentStatus");
+
+
+    rzpButton.addEventListener("click", function () {
+
+        paymentStatus.textContent =
+            "Payment window खुल रहा है...";
+
+
+        const options = {
+
+            key: RAZORPAY_KEY,
+
+            amount: 4900,
+
+            currency: "INR",
+
+            name: "SaurabhNovelist",
+
+            description:
+                "एक अनजान मुलाकात — Full Novel",
+
+            image:
+                "images/author.jpg",
+
+            prefill: {
+                name: "",
+                email: ""
+            },
+
+            notes: {
+                novel:
+                    "एक अनजान मुलाकात"
+            },
+
+            theme: {
+                color: "#d4af37"
+            },
+
+            handler: function (response) {
+
+                console.log(
+                    "Razorpay Test Payment Response:",
+                    response
+                );
+
+
+                paymentStatus.innerHTML =
+                    "✅ Test Payment Successful!<br>" +
+                    "Payment ID: " +
+                    response.razorpay_payment_id +
+                    "<br><small>" +
+                    "अभी full novel unlock नहीं की गई है।" +
+                    "</small>";
+
+
+                alert(
+                    "✅ Test Payment Successful!\n\n" +
+                    "Payment ID:\n" +
+                    response.razorpay_payment_id +
+                    "\n\n" +
+                    "यह Test Mode payment है।"
+                );
+
+            },
+
+            modal: {
+
+                ondismiss: function () {
+
+                    paymentStatus.textContent =
+                        "Payment window बंद कर दी गई।";
+
+                }
+
+            }
+
+        };
+
+
+        const razorpay =
+            new Razorpay(options);
+
+
+        razorpay.on(
+            "payment.failed",
+            function (response) {
+
+                console.error(
+                    "Payment failed:",
+                    response.error
+                );
+
+
+                paymentStatus.textContent =
+                    "❌ Test Payment Failed. फिर से कोशिश करें।";
+
+            }
+        );
+
+
+        razorpay.open();
+
+    });
+
+
+    /* =====================================================
+       SUPABASE
+    ===================================================== */
 
     const SUPABASE_URL =
         "https://byzzwowcanhuxcvioomx.supabase.co";
@@ -791,23 +835,9 @@
         "एक अनजान मुलाकात";
 
 
-    /* =========================
-       PAYMENT MESSAGE
-    ========================= */
-
-    function showPaymentMessage() {
-
-        alert(
-            "₹49 का Secure Payment System अभी setup होना बाकी है।\n\n" +
-            "Payment verification के बाद ही पूरी Novel का access दिया जाएगा।"
-        );
-
-    }
-
-
-    /* =========================
+    /* =====================================================
        LOAD REVIEWS
-    ========================= */
+    ===================================================== */
 
     async function loadReviews() {
 
@@ -837,6 +867,7 @@
                 "Review loading error:",
                 error
             );
+
 
             reviewsList.innerHTML =
                 `
@@ -925,9 +956,9 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        SUBMIT REVIEW
-    ========================= */
+    ===================================================== */
 
     async function submitReview() {
 
@@ -997,6 +1028,7 @@
                 error
             );
 
+
             message.textContent =
                 "Review submit नहीं हो पाया। थोड़ी देर बाद फिर कोशिश करें।";
 
@@ -1023,9 +1055,9 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        HTML ESCAPE
-    ========================= */
+    ===================================================== */
 
     function escapeHTML(value) {
 
@@ -1044,9 +1076,9 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        START
-    ========================= */
+    ===================================================== */
 
     loadReviews();
 
