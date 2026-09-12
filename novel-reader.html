@@ -550,60 +550,60 @@
 
 
     <!-- LOCKED CONTENT / PAYMENT -->
-
-    <!-- ₹49 PAYMENT SECTION -->
 <section class="payment-card">
-
-    <div class="payment-icon">📖</div>
-
+    <div class="payment-icon"></div>
     <h2>पूरी कहानी पढ़ें</h2>
-
     <div class="price">₹49</div>
-
     <p class="payment-text">
-        20 पेज निःशुल्क पढ़ने के बाद पूरी कहानी पढ़ने के लिए
-        ₹49 का भुगतान आवश्यक है।
+        20 पेज निःशुल्क पढ़ने के बाद पूरी कहानी पढ़ने के लिए ₹49 का भुगतान आवश्यक है।
     </p>
 
-    <!-- DEMO QR PLACEHOLDER -->
-    <div class="qr-box">
-        <div class="qr-placeholder">
-            QR
-        </div>
-
-        <p>
-            <strong>Payment QR</strong><br>
-            <small>Payment setup होने के बाद QR यहाँ दिखाई देगा।</small>
-        </p>
-    </div>
-
-    <button class="pay-btn" type="button" disabled>
-        💳 Pay ₹49
+    <!-- Pay Button -->
+    <button class="buy-btn" id="showQrBtn" onclick="togglePaymentQR()" style="margin-bottom: 20px;">
+        Pay ₹49 / QR देखें
     </button>
 
-    <div class="after-payment">
-        <h3>भुगतान के बाद</h3>
+    <!-- QR Section (Initially Hidden) -->
+    <div id="qrPaymentSection" style="display: none; text-align: center; margin-top: 15px;">
+        <div style="background: #fff; padding: 15px; border-radius: 12px; display: inline-block; max-width: 260px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+            <img src="images/qr.png" alt="Payment QR Code" style="width: 100%; height: auto; border-radius: 8px; display: block;">
+        </div>
 
-        <p>
-            Payment successful होने के बाद अपना
-            <strong>payment screenshot</strong> WhatsApp पर भेजें।
+        <div class="after-payment" style="margin-top: 20px;">
+            <h3>भुगतान के बाद:</h3>
+            <p>
+                Payment successful होने के बाद अपना <strong>payment screenshot</strong> WhatsApp पर भेजें।
+            </p>
+            <p style="font-size: 18px; font-weight: bold; margin: 10px 0;">
+                <a href="https://wa.me/917268802785?text=Hello,%20maine%20novel%20ke%20liye%20payment%20kar%20diya%20hai.%20Ye%20raha%20screenshot." target="_blank" style="color: #25d366; text-decoration: none;">
+                    📲 7268802785 पर भेजें
+                </a>
+            </p>
+            <p>
+                Verification के बाद आपको आगे की reading/access information WhatsApp पर तुरंत दी जाएगी।
+            </p>
+        </div>
 
-            
-        7268802785
-        </p>
-
-        <p>
-            Verification के बाद आपको आगे की reading/access
-            information WhatsApp पर दी जाएगी।
-        </p>
-
-        <div class="whatsapp-note">
-            📱 WhatsApp Support<br>
-            <strong>SaurabhNovelist</strong>
+        <div class="whatsapp-note" style="margin-top: 15px;">
+            WhatsApp Support: <strong>SaurabhNovelist</strong>
         </div>
     </div>
-
 </section>
+
+<script>
+function togglePaymentQR() {
+    var qrBox = document.getElementById('qrPaymentSection');
+    var btn = document.getElementById('showQrBtn');
+    if (qrBox.style.display === 'none' || qrBox.style.display === '') {
+        qrBox.style.display = 'block';
+        btn.innerText = 'QR कोड छुपाएँ';
+    } else {
+        qrBox.style.display = 'none';
+        btn.innerText = 'Pay ₹49 / QR देखें';
+    }
+}
+</script>
+
 
 
     <!-- REVIEWS -->
