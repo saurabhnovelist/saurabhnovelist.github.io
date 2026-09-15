@@ -9,13 +9,99 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .book-cover {
+        /* BOOK SECTION */
+        .shayari-book-section {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 15px;
+            text-align: center;
+        }
+
+        .shayari-book-label {
+            color: #d4af37;
+            font-size: 18px;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+
+        /* BOOK COVER */
+        .shayari-book-cover {
             display: block;
-            width: 280px;
-            max-width: 85%;
+            width: 320px;
+            max-width: 88%;
             height: auto;
-            margin: 20px auto;
-            border-radius: 8px;
+            margin: 0 auto 25px;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.7),
+                0 0 15px rgba(212, 175, 55, 0.18);
+        }
+
+        /* BOOK INFO */
+        .shayari-book-info {
+            padding: 5px 10px 25px;
+        }
+
+        .shayari-book-info h2 {
+            color: #d4af37;
+            font-size: 27px;
+            margin: 10px 0 12px;
+        }
+
+        .shayari-book-info p {
+            color: #eeeeee;
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 8px auto;
+            max-width: 500px;
+        }
+
+        .shayari-book-author {
+            color: #d4af37 !important;
+            font-size: 15px !important;
+            margin-top: 15px !important;
+        }
+
+        /* BUTTON */
+        .shayari-book-button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 11px 24px;
+
+            color: #111;
+            background: #d4af37;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            border-radius: 6px;
+        }
+
+        .shayari-book-button:hover {
+            opacity: 0.9;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            .shayari-book-section {
+                margin-top: 20px;
+            }
+
+            .shayari-book-cover {
+                width: 290px;
+                max-width: 90%;
+            }
+
+            .shayari-book-info h2 {
+                font-size: 23px;
+            }
+
+            .shayari-book-info p {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
@@ -29,40 +115,44 @@
 
     <main>
 
-        <!-- SHAYARI BOOK 01 -->
-        <div class="shayari-card">
+        <section class="shayari-book-section">
 
-            <div class="number">
-                ✦ My Frist Shayri  Books 📚
+            <div class="shayari-book-label">
+                ✦ My First Shayari Book 📚
             </div>
 
             <!-- BOOK COVER -->
             <img
-                src="images/alfaz-jo-kah-na-sake.png"
-                alt="अल्फ़ाज़ जो कह न सके — Saurabh Verma
-                class="book-cover"
+                src="images/alfaz-jo-kah-na-sake.jpg"
+                alt="अल्फ़ाज़ जो कह न सके — Saurabh Verma"
+                class="shayari-book-cover"
                 loading="lazy"
             >
 
-            <h2>
-                अल्फ़ाज़ जो कह न सके
-            </h2>
+            <!-- BOOK INFORMATION -->
+            <div class="shayari-book-info">
 
-            <p>
-                कुछ एहसास शब्दों में नहीं कहे जाते,
-                बस महसूस किए जाते हैं...
-                इन्हीं अनकहे एहसासों की शायरी।
-            </p>
+                <h2>
+                    अल्फ़ाज़ जो कह न सके
+                </h2>
 
-            <p>
-                ✍️ Saurabh Verma
-            </p>
+                <p>
+                    कुछ एहसास शब्दों में नहीं कहे जाते,
+                    बस महसूस किए जाते हैं...
+                    इन्हीं अनकहे एहसासों की शायरी।
+                </p>
 
-            <a href="#" class="btn primary">
-                📖 जल्द पढ़ें
-            </a>
+                <p class="shayari-book-author">
+                    ✍️ Saurabh Verma
+                </p>
 
-        </div>
+                <a href="#" class="shayari-book-button">
+                    📖 जल्द पढ़ें
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
 
