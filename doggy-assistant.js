@@ -123,29 +123,6 @@
         messages.appendChild(userMessage);
 
 
-        /* DEMO RESPONSE */
-
-        setTimeout(function () {
-
-            const answer = document.createElement("div");
-
-            answer.className = "ai-message";
-
-            answer.innerHTML = `
-             const { data, error } = await supabase.functions.invoke("swift-task", {
-    body: {
-        question: question
-    }
-});   
-            
-
-            messages.appendChild(answer);
-
-            messages.scrollTop = messages.scrollHeight;
-
-        }, 500);
-
-
         messages.scrollTop = messages.scrollHeight;
 
     }
