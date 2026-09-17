@@ -1440,3 +1440,374 @@ img {
     border-radius: 10px;
     color: #ddd;
 }
+/* ==========================================
+   🐶 SAURABHNOVELIST AI DOGGY
+========================================== */
+
+#saurabh-doggy {
+    position: fixed;
+    left: 15%;
+    bottom: 18px;
+    z-index: 99999;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.25s ease;
+    user-select: none;
+}
+
+#saurabh-doggy:hover {
+    transform: scale(1.08);
+}
+
+.doggy-face {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111;
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+
+    font-size: 34px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.65),
+        0 0 12px rgba(212,175,55,.25);
+
+    animation: doggy-bounce 1.8s infinite ease-in-out;
+}
+
+.doggy-name {
+    margin-top: 4px;
+    color: #d4af37;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+@keyframes doggy-bounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+/* ==========================================
+   CHAT WINDOW
+========================================== */
+
+#saurabh-ai-chat {
+    position: fixed;
+
+    right: 18px;
+    bottom: 90px;
+
+    width: 340px;
+    max-width: calc(100vw - 30px);
+
+    height: 500px;
+    max-height: 75vh;
+
+    background: #0d0d0d;
+
+    border: 1px solid #d4af37;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    z-index: 100000;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.75),
+        0 0 20px rgba(212,175,55,.12);
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(20px) scale(.96);
+
+    pointer-events: none;
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+#saurabh-ai-chat.ai-open {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    pointer-events: auto;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.ai-header {
+
+    padding: 14px 15px;
+
+    background: #111;
+
+    border-bottom: 1px solid rgba(212,175,55,.35);
+
+    color: #fff;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.ai-header strong {
+
+    color: #d4af37;
+
+}
+
+.ai-status {
+
+    font-size: 10px;
+
+    color: #7ed957;
+
+    margin-left: 5px;
+
+}
+
+#ai-close {
+
+    background: none;
+
+    border: none;
+
+    color: #d4af37;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+/* ==========================================
+   MESSAGES
+========================================== */
+
+.ai-messages {
+
+    flex: 1;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.ai-message {
+
+    align-self: flex-start;
+
+    max-width: 85%;
+
+    background: #171717;
+
+    color: #eee;
+
+    border-left: 3px solid #d4af37;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+}
+
+.user-message {
+
+    align-self: flex-end;
+
+    max-width: 85%;
+
+    background: #d4af37;
+
+    color: #111;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ==========================================
+   QUICK QUESTIONS
+========================================== */
+
+.ai-suggestions {
+
+    padding: 8px;
+
+    display: flex;
+
+    gap: 6px;
+
+    overflow-x: auto;
+
+    border-top: 1px solid rgba(212,175,55,.15);
+
+}
+
+.ai-suggestions button {
+
+    white-space: nowrap;
+
+    background: #171717;
+
+    color: #d4af37;
+
+    border: 1px solid rgba(212,175,55,.4);
+
+    border-radius: 20px;
+
+    padding: 7px 10px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+
+/* ==========================================
+   INPUT
+========================================== */
+
+.ai-input-area {
+
+    display: flex;
+
+    padding: 10px;
+
+    gap: 8px;
+
+    background: #111;
+
+    border-top: 1px solid rgba(212,175,55,.3);
+
+}
+
+#ai-input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    background: #1b1b1b;
+
+    color: #fff;
+
+    border: 1px solid #444;
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    outline: none;
+
+}
+
+#ai-input:focus {
+
+    border-color: #d4af37;
+
+}
+
+#ai-send {
+
+    width: 42px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    #saurabh-doggy {
+
+        bottom: 15px;
+
+    }
+
+    .doggy-face {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 30px;
+
+    }
+
+    #saurabh-ai-chat {
+
+        right: 10px;
+
+        bottom: 78px;
+
+        width: calc(100vw - 20px);
+
+        height: 470px;
+
+        max-height: 72vh;
+
+    }
+
+       }
