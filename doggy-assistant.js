@@ -123,6 +123,32 @@
         messages.appendChild(userMessage);
 
 
+        /* DEMO RESPONSE */
+
+        setTimeout(function () {
+
+            const answer = document.createElement("div");
+
+            answer.className = "ai-message";
+
+            answer.innerHTML = `
+                🐶 अभी मैं Demo Mode में हूँ।<br><br>
+
+                आपका सवाल मिला:
+                <strong>${escapeHTML(question)}</strong>
+                <br><br>
+
+                जल्द ही मुझे Real AI से connect किया जाएगा,
+                जिसके बाद मैं आपके सवालों के जवाब दे पाऊँगा। ✨
+            `;
+
+            messages.appendChild(answer);
+
+            messages.scrollTop = messages.scrollHeight;
+
+        }, 500);
+
+
         messages.scrollTop = messages.scrollHeight;
 
     }
