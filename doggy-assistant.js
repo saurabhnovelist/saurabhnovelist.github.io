@@ -132,15 +132,12 @@
             answer.className = "ai-message";
 
             answer.innerHTML = `
-                🐶 अभी मैं Demo Mode में हूँ।<br><br>
-
-                आपका सवाल मिला:
-                <strong>${escapeHTML(question)}</strong>
-                <br><br>
-
-                जल्द ही मुझे Real AI से connect किया जाएगा,
-                जिसके बाद मैं आपके सवालों के जवाब दे पाऊँगा। ✨
-            `;
+             const { data, error } = await supabase.functions.invoke("swift-task", {
+    body: {
+        question: question
+    }
+});   
+            
 
             messages.appendChild(answer);
 
