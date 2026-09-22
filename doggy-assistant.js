@@ -1,5 +1,5 @@
 // ==========================================
-// 🐶 SAURABHNOVELIST SMART DOGGY ASSISTANT
+// 🐶 SAURABHNOVELIST SMART DOGGY ASSISTANT (UPDATED)
 // No API / No OpenAI Credits Required
 // ==========================================
 
@@ -48,7 +48,7 @@
                 <br><br>
 
                 आप मुझसे Novel, Shayari, Kavita,
-                Free eBook या Author के बारे में पूछ सकते हैं।
+                Free eBook, Support या Author के बारे में पूछ सकते हैं।
             </div>
 
         </div>
@@ -59,16 +59,20 @@
                 📖 Novel
             </button>
 
+            <button data-question="Novel कैसे खरीदें?">
+                🛒 Buy ₹49
+            </button>
+
             <button data-question="Free eBook कैसे मिलेगी?">
                 🎁 Free eBook
             </button>
 
-            <button data-question="SaurabhNovelist के बारे में बताओ">
-                ✍️ Author
+            <button data-question="SaurabhNovelist से संपर्क कैसे करें?">
+                📞 Help & Support
             </button>
 
-            <button data-question="Shayari कहाँ पढ़ें?">
-                📝 Shayari
+            <button data-question="अगली किताब कब आएगी?">
+                ✨ Next Book
             </button>
 
         </div>
@@ -96,16 +100,11 @@
     ========================= */
 
     dog.addEventListener("click", function () {
-
         chat.classList.toggle("ai-open");
-
     });
 
-
     document.getElementById("ai-close").addEventListener("click", function () {
-
         chat.classList.remove("ai-open");
-
     });
 
 
@@ -150,6 +149,54 @@
                 <br><br>
 
                 ✍️ लेखक: <strong>Saurabh Verma</strong>
+            `;
+
+        }
+
+
+        /* =========================
+           BUY NOVEL / PAYMENT
+        ========================= */
+
+        if (
+            q.includes("buy") ||
+            q.includes("खरीद") ||
+            q.includes("purchase") ||
+            q.includes("order") ||
+            q.includes("कैसे खरीदें")
+        ) {
+
+            return `
+                🛒 <strong>Novel कैसे खरीदें?</strong><br><br>
+
+                1. Website पर <strong>'Buy Novel'</strong> बटन पर क्लिक करें।<br>
+                2. UPI / Card / Net Banking से केवल ₹49 का भुगतान करें।<br>
+                3. पेमेंट सफल होते ही आपको तुरंत <strong>PDF Download</strong> लिंक मिल जाएगा। 📚✨
+            `;
+
+        }
+
+
+        /* =========================
+           DOWNLOAD / PAYMENT ISSUE (NEW)
+        ========================= */
+
+        if (
+            q.includes("download") ||
+            q.includes("डाउनलोड") ||
+            q.includes("नहीं मिला") ||
+            q.includes("payment fail") ||
+            q.includes("पैसे कट गए")
+        ) {
+
+            return `
+                ⚠️ <strong>Download या Payment से जुड़ी समस्या?</strong><br><br>
+
+                अगर पैसे कट गए हैं और PDF डाउनलोड नहीं हुआ है, तो घबराएं नहीं:<br><br>
+
+                1. अपना <strong>Transaction ID</strong> या पेमेंट स्क्रीनशॉट लें।<br>
+                2. हमें Instagram (<strong>@saurabhnovelist</strong>) पर DM करें।<br>
+                3. वेरिफिकेशन के बाद PDF आपको सीधे भेज दी जाएगी। 🤝
             `;
 
         }
@@ -223,6 +270,76 @@
 
                 लेखक: <strong>Saurabh Verma</strong><br>
                 Brand: <strong>SaurabhNovelist</strong>
+            `;
+
+        }
+
+
+        /* =========================
+           NEXT BOOK / UPCOMING (NEW)
+        ========================= */
+
+        if (
+            q.includes("next book") ||
+            q.includes("अगली किताब") ||
+            q.includes("नया उपन्यास") ||
+            q.includes("upcoming") ||
+            q.includes("अगला novel")
+        ) {
+
+            return `
+                ✨ <strong>Upcoming Projects</strong><br><br>
+
+                लेखक Saurabh Verma का नया प्रोजेक्ट जल्द आ रहा है। नए उपन्यास और कहानियों की घोषणा सबसे पहले Instagram पर की जाएगी।<br><br>
+
+                अपडेट्स के लिए <strong>@saurabhnovelist</strong> को फॉलो करते रहें! 📢
+            `;
+
+        }
+
+
+        /* =========================
+           SAMPLE / PREVIEW (NEW)
+        ========================= */
+
+        if (
+            q.includes("sample") ||
+            q.includes("preview") ||
+            q.includes("पहले पढ़ना") ||
+            q.includes("थोड़ा पढ़ना") ||
+            q.includes("ट्रेलर")
+        ) {
+
+            return `
+                📖 <strong>Free Preview / Sample</strong><br><br>
+
+                आप उपन्यास का पहला अध्याय (Chapter 1) वेबसाइट पर मुफ्त में पढ़ सकते हैं।<br><br>
+                पूरी कहानी और सस्पेंस जानने के लिए आप ₹49 में पूरी किताब ले सकते हैं। ✨
+            `;
+
+        }
+
+
+        /* =========================
+           CONTACT / SUPPORT (NEW)
+        ========================= */
+
+        if (
+            q.includes("contact") ||
+            q.includes("संपर्क") ||
+            q.includes("help") ||
+            q.includes("मदद") ||
+            q.includes("बात करनी") ||
+            q.includes("support")
+        ) {
+
+            return `
+                📞 <strong>Help & Support</strong><br><br>
+
+                किसी भी सहायता, सुझाव या सहयोग के लिए:<br><br>
+                📱 <strong>Instagram DM:</strong> @saurabhnovelist<br>
+                🌐 <strong>Website Contact Form:</strong> Footer में देखें।<br><br>
+                हम 24-48 घंटों के भीतर जवाब देने की पूरी कोशिश करते हैं। ✨
             `;
 
         }
@@ -317,13 +434,8 @@
             return `
                 📱 <strong>Instagram</strong><br><br>
 
-                Official Instagram:
-                <br><br>
-
-                <strong>@saurabhnovelist</strong>
-
-                <br><br>
-
+                Official Instagram:<br><br>
+                <strong>@saurabhnovelist</strong><br><br>
                 वहाँ Novel updates, Shayari,
                 Reels और नए posts देख सकते हैं। ✨
             `;
@@ -375,7 +487,7 @@
                 <br><br>
 
                 Novel, Shayari, Kavita,
-                Free eBook या Author के बारे में
+                Free eBook, Support या Author के बारे में
                 मुझसे पूछ सकते हैं।
             `;
 
@@ -418,12 +530,13 @@
             <br><br>
 
             📖 <strong>Novel</strong><br>
+            🛒 <strong>Buy Novel</strong><br>
+            ⚠️ <strong>Download Issue</strong><br>
             📝 <strong>Shayari</strong><br>
             🌸 <strong>Kavita</strong><br>
             🎁 <strong>Free eBook</strong><br>
             ✍️ <strong>Author</strong><br>
-            📱 <strong>Instagram</strong><br>
-            🌐 <strong>Website</strong>
+            📞 <strong>Support</strong>
         `;
 
     }
@@ -443,24 +556,16 @@
         /* USER MESSAGE */
 
         const userMessage = document.createElement("div");
-
         userMessage.className = "user-message";
-
         userMessage.textContent = question;
-
         messages.appendChild(userMessage);
 
 
         /* THINKING MESSAGE */
 
         const thinking = document.createElement("div");
-
         thinking.className = "ai-message";
-
-        thinking.innerHTML = `
-            🐶 सोच रहा हूँ...
-        `;
-
+        thinking.innerHTML = `🐶 सोच रहा हूँ...`;
         messages.appendChild(thinking);
 
         messages.scrollTop = messages.scrollHeight;
@@ -469,11 +574,8 @@
         /* ANSWER */
 
         setTimeout(function () {
-
             thinking.innerHTML = getAnswer(question);
-
             messages.scrollTop = messages.scrollHeight;
-
         }, 500);
 
     }
@@ -484,13 +586,9 @@
     ========================= */
 
     document.getElementById("ai-send").addEventListener("click", function () {
-
         const input = document.getElementById("ai-input");
-
         sendMessage(input.value);
-
         input.value = "";
-
     });
 
 
@@ -499,13 +597,9 @@
     ========================= */
 
     document.getElementById("ai-input").addEventListener("keydown", function (event) {
-
         if (event.key === "Enter") {
-
             document.getElementById("ai-send").click();
-
         }
-
     });
 
 
@@ -514,13 +608,9 @@
     ========================= */
 
     document.querySelectorAll(".ai-suggestions button").forEach(function (button) {
-
         button.addEventListener("click", function () {
-
             sendMessage(button.dataset.question);
-
         });
-
     });
 
 
@@ -529,32 +619,22 @@
     ========================= */
 
     let dogPosition = 15;
-
     let direction = 1;
 
     setInterval(function () {
-
         if (chat.classList.contains("ai-open")) return;
 
         dogPosition += direction * 0.35;
 
-
         if (dogPosition >= 78) {
-
             direction = -1;
-
         }
-
 
         if (dogPosition <= 8) {
-
             direction = 1;
-
         }
 
-
         dog.style.left = dogPosition + "%";
-
     }, 80);
 
 })();
