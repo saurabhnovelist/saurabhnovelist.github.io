@@ -1,5 +1,6 @@
 // ==========================================
-// 🐶 SAURABHNOVELIST SMART DOGGY AI ASSISTANT (ALL LINKS RESTORED)
+// 🐶 SAURABHNOVELIST SMART DOGGY AI ASSISTANT
+// Full 100 Q&A Knowledge Base + Religious Greetings + Direct Links
 // ==========================================
 
 (function () {
@@ -42,40 +43,40 @@
         <div class="ai-messages" id="ai-messages">
 
             <div class="ai-message">
-                नमस्ते! 👋🐶<br><br>
+                नमस्ते! 🙏🐶<br><br>
                 मैं <strong>SaurabhNovelist</strong> का AI साथी हूँ।<br><br>
-                मुझे आपसे मिलकर बहुत खुशी हुई! बताइए मैं आपकी क्या मदद कर सकता हूँ? वैसे, <strong>क्या आप अपना नाम बता सकते हैं?</strong> 😊
+                मुझे आपसे मिलकर बहुत खुशी हुई! बताइए मैं आपकी क्या मदद कर सकता हूँ? वैसे, <strong>क्या आप अपना प्यारा सा नाम बता सकते हैं?</strong> 😊
             </div>
 
         </div>
 
         <div class="ai-suggestions">
 
-            <button data-question="नमस्ते">
-                👋 Hello
+            <button data-question="राधे राधे">
+                🌸 राधे राधे
             </button>
 
             <button data-question="Novel कैसे खरीदें?">
-                🛒 Buy Novel ₹49
+                🛒 Buy ₹49 (QR)
             </button>
 
-            <button data-question="शायरी संग्रह दिखाओ">
-                ✍️ शायरी
+            <button data-question="एक अनजान मुलाकात की कहानी क्या है?">
+                📖 Novel Story
             </button>
 
-            <button data-question="कविता संग्रह दिखाओ">
-                🌸 कविताएँ
+            <button data-question="शायरी और कविताएँ कहाँ पढ़ें?">
+                ✍️ शायरी & कविता
             </button>
 
-            <button data-question="कड़वी सच्चाई और विचार">
-                💭 कड़वी सच्चाई
+            <button data-question="Free eBook कैसे मिलेगी?">
+                🎁 Free eBook
             </button>
 
-            <button data-question="Saurabh Verma के बारे में बताइए">
+            <button data-question="Saurabh Verma कौन हैं?">
                 👤 About Author
             </button>
 
-            <button data-question="Support और Helpline नंबर">
+            <button data-question="हेल्पलाइन और सपोर्ट नंबर">
                 📞 Help & Support
             </button>
 
@@ -115,7 +116,7 @@
 
 
     /* =========================
-       SMART ANSWER SYSTEM
+       SMART KNOWLEDGE & ANSWER ENGINE
     ========================= */
 
     function getAnswer(rawInput) {
@@ -125,11 +126,16 @@
             .replace(/[?!.।,]/g, "")
             .trim();
 
+
         /* =========================
-           1. USER NAME HANDLING
+           1. USER NAME CAPTURE
         ========================= */
 
-        if (waitingForName && !q.includes("buy") && !q.includes("novel") && !q.includes("kavita") && !q.includes("shayari") && !q.includes("help") && !q.includes("support")) {
+        if (waitingForName && 
+            !q.includes("buy") && !q.includes("novel") && !q.includes("kavita") && 
+            !q.includes("shayari") && !q.includes("help") && !q.includes("support") &&
+            !q.includes("radhe") && !q.includes("ram") && !q.includes("mahadev") &&
+            !q.includes("krishna") && !q.includes("jai")) {
             
             waitingForName = false;
             let extractedName = rawInput.trim();
@@ -142,7 +148,7 @@
 
             return `
                 अरे वाह! <strong>${userName}</strong>, आपका नाम बहुत ही अच्छा और प्यारा है! ❤️✨<br><br>
-                बताइए <strong>${userName} जी</strong>, आज आप क्या पढ़ना या देखना चाहेंगे? सीधे लिंक पर क्लिक करके पढ़ें:<br><br>
+                बताइए <strong>${userName} जी</strong>, आज आप SaurabhNovelist पर क्या पढ़ना या जानना चाहेंगे? आप सीधे नीचे दिए गए लिंक्स पर क्लिक कर सकते हैं:<br><br>
                 📖 <a href="novel.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">उपन्यास (एक अनजान मुलाकात)</a><br>
                 ✍️ <a href="shayari.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">मेरी शायरियाँ संग्रह</a><br>
                 🌸 <a href="kavita.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">दिल को छू लेने वाली कविताएँ</a><br>
@@ -154,7 +160,40 @@
 
 
         /* =========================
-           2. GREETINGS (HI / HELLO)
+           2. RELIGIOUS GREETINGS
+        ========================= */
+
+        if (q.includes("radhe") || q.includes("राधे")) {
+            return `
+                🌸 <strong>राधे राधे!</strong> 🙏❤️<br><br>
+                श्री राधा रानी की कृपा आप पर सदैव बनी रहे। मुझे आपसे जुड़कर बहुत खुशी हुई! बताइए <strong>${userName ? userName + " जी" : "मित्र"}</strong>, मैं आपकी क्या सेवा या मदद कर सकता हूँ? ✨
+            `;
+        }
+
+        if (q.includes("ram ram") || q.includes("राम राम") || q.includes("jai shree ram") || q.includes("जय श्री राम")) {
+            return `
+                🙏 <strong>राम राम जी! जय श्री राम!</strong> 🏹🚩<br><br>
+                प्रभु श्री राम का आशीर्वाद आप पर हमेशा बना रहे। आपका दिन मंगलमय हो! बताइए मैं आपकी किस प्रकार मदद कर सकता हूँ? 🐶✨
+            `;
+        }
+
+        if (q.includes("mahadev") || q.includes("महादेव") || q.includes("har har") || q.includes("हर हर") || q.includes("bholenath") || q.includes("भोलेनाथ") || q.includes("shiv") || q.includes("शिव")) {
+            return `
+                🔱 <strong>हर हर महादेव! जय शिव शंभू!</strong> 🕉️<br><br>
+                बाबा विश्वनाथ और देवाधिदेव महादेव की कृपा आप पर हमेशा बनी रहे। बताइए <strong>${userName ? userName + " जी" : "दोस्त"}</strong>, आज साहित्य की इस दुनिया में आपकी क्या मदद करूँ? 🙏✨
+            `;
+        }
+
+        if (q.includes("jai shree krishna") || q.includes("जय श्री कृष्णा") || q.includes("krishna") || q.includes("कृष्णा")) {
+            return `
+                🦚 <strong>जय श्री कृष्णा!</strong> 🙏❤️<br><br>
+                माखनचोर, मुरलीधर का स्नेह आप पर हमेशा बना रहे। बताइए आज मैं आपकी क्या सहायता कर सकता हूँ? 🐶✨
+            `;
+        }
+
+
+        /* =========================
+           3. STANDARD GREETINGS
         ========================= */
 
         if (
@@ -172,7 +211,7 @@
             if (userName) {
                 return `
                     नमस्ते <strong>${userName} जी</strong>! 👋🐶<br><br>
-                    आपसे दोबारा बात करके बहुत अच्छा लगा। आप नीचे दिए गए किसी भी लिंक पर जाकर पढ़ सकते हैं:<br><br>
+                    आपसे दोबारा बात करके बहुत अच्छा लगा। बताइए आज आपकी क्या मदद करूँ? आप सीधे नीचे दिए गए सेक्शन देख सकते हैं:<br><br>
                     • <a href="novel.html" style="color:#d4af37; text-decoration:underline;">📖 Novel "एक अनजान मुलाकात"</a><br>
                     • <a href="shayari.html" style="color:#d4af37; text-decoration:underline;">✍️ हिंदी शायरी</a><br>
                     • <a href="kavita.html" style="color:#d4af37; text-decoration:underline;">🌸 कविताएँ</a><br>
@@ -182,41 +221,183 @@
 
             return `
                 नमस्ते! 👋🐶<br><br>
-                मुझे आपसे मिलकर बहुत खुशी हुई! SaurabhNovelist की साहित्यिक दुनिया में आपका स्वागत है।<br><br>
-                बताइए मैं आपकी क्या मदद कर सकता हूँ? वैसे, <strong>क्या आप अपना प्यारा सा नाम बता सकते हैं?</strong> 😊
+                मुझे आपसे मिलकर बहुत खुशी हुई! बताइए मैं आपकी क्या मदद कर सकता हूँ? वैसे, <strong>क्या आप अपना प्यारा सा नाम बता सकते हैं?</strong> 😊
             `;
         }
 
 
         /* =========================
-           3. SHAYARI (DIRECT LINKS)
+           4. BUY NOVEL / QR PAYMENT (₹49)
         ========================= */
 
-        if (q.includes("shayari") || q.includes("शायरी") || q.includes("अल्फ़ाज़")) {
+        if (
+            q.includes("buy") ||
+            q.includes("खरीद") ||
+            q.includes("purchase") ||
+            q.includes("order") ||
+            q.includes("qr") ||
+            q.includes("क्यूआर") ||
+            q.includes("pay") ||
+            q.includes("पेमेंट") ||
+            q.includes("49") ||
+            q.includes("₹49") ||
+            q.includes("दाम")
+        ) {
+
             return `
-                ✍️ <strong>हिंदी शायरी संग्रह</strong><br><br>
-                दिल से निकले अनकहे एहसासों और खूबसूरत पलों की शायरियाँ यहाँ पढ़ें:<br><br>
-                👉 <a href="shayari.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">❤️ सभी शायरियाँ पढ़ें →</a><br>
-                👉 <a href="shayari-books.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📚 शायरी बुक (अल्फ़ाज़ जो कह न सके) →</a>
+                🛒 <strong>Novel "एक अनजान मुलाकात" खरीदें (Full Access)</strong><br><br>
+                💰 <strong>मूल्य:</strong> मात्र ₹49<br><br>
+                📱 <strong>नीचे दिए गए QR कोड को किसी भी UPI App (GPay/PhonePe/Paytm) से Scan करके भुगतान करें:</strong><br><br>
+                <div style="background:#fff; padding:10px; border-radius:10px; text-align:center; max-width:200px; margin:5px auto; border:2px solid #d4af37;">
+                    <img src="images/qr.png" alt="Payment QR Code" style="width:100%; height:auto; border-radius:6px; display:block;">
+                </div>
+                <br>
+                ✅ <strong>भुगतान के बाद क्या करें?</strong><br>
+                1. अपने पेमेंट का Screenshot लें।<br>
+                2. इस WhatsApp लिंक पर तुरंत भेजें:<br>
+                👉 <a href="https://wa.me/917268802785?text=Hello,%20maine%20novel%20ke%20liye%20payment%20kar%20diya%20hai.%20Ye%20raha%20screenshot." target="_blank" style="color:#25d366; font-weight:bold; text-decoration:underline;">📲 WhatsApp पर Screenshot भेजें (+91 7268802785)</a><br><br>
+                🔗 आप Reader पेज पर जाकर भी पूरा विवरण देख सकते हैं:<br>
+                👉 <a href="novel-reader.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📖 Novel Reader Page खोलें →</a>
             `;
         }
 
 
         /* =========================
-           4. KAVITA (DIRECT LINKS)
+           5. ABOUT NOVEL (PLOT, SHIVAM, KAVITA, AIRPORT)
         ========================= */
 
-        if (q.includes("kavita") || q.includes("कविता") || q.includes("poem") || q.includes("poetry")) {
+        if (
+            q.includes("कहानी") ||
+            q.includes("plot") ||
+            q.includes("shivam") ||
+            q.includes("shivam aur kavita") ||
+            q.includes("शिवम") ||
+            q.includes("कविता कौन") ||
+            q.includes("airport") ||
+            q.includes("एयरपोर्ट") ||
+            q.includes("वाराणसी") ||
+            q.includes("चाय") ||
+            q.includes("note") ||
+            q.includes("नोट") ||
+            q.includes("बारिश") ||
+            q.includes("hyderabad") ||
+            q.includes("bombay") ||
+            q.includes("शादी") ||
+            q.includes("photo") ||
+            q.includes("अनजान मुलाकात क्या है") ||
+            q.includes("novel का नाम") ||
+            q.includes("किस बारे में")
+        ) {
+
+            return `
+                📖 <strong>उपन्यास: एक अनजान मुलाकात (Overview)</strong><br><br>
+                • <strong>मुख्य पात्र:</strong> शिवम और कविता।<br>
+                • <strong>शुरुआत:</strong> कहानी की शुरुआत वाराणसी एयरपोर्ट पर होती है, जहाँ बारिश और खराब मौसम के कारण फ्लाइट में देरी होती है।<br>
+                • <strong>चाय और बातचीत:</strong> एयरपोर्ट कैंटीन में एक कप चाय के साथ शुरू हुई बातचीत दोनों के बीच एक गहरा भावनात्मक रिश्ता बना देती है।<br>
+                • <strong>नोट का रहस्य:</strong> कविता द्वारा दिया गया एक छोटा-सा नोट शिवम तक समय पर नहीं पहुँच पाता।<br>
+                • <strong>मोड़:</strong> शिवम को हैदराबाद और कविता को बॉम्बे जाना होता है। बाद में पारिवारिक विवाह चर्चाओं के बीच जब शिवम प्रस्तावित रिश्तों में कविता की तस्वीर देखता है, तो उसकी जिंदगी में अतीत का वह सवाल फिर जाग उठता है कि क्या कविता उसे पहचान पाएगी?<br><br>
+                👉 <a href="novel.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📖 Novel का मुख्य पेज देखें →</a><br>
+                👉 <a href="novel-reader.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📄 20 Pages Free Preview पढ़ें →</a>
+            `;
+        }
+
+
+        /* =========================
+           6. FREE PREVIEW / SAMPLE
+        ========================= */
+
+        if (
+            q.includes("sample") ||
+            q.includes("preview") ||
+            q.includes("20 page") ||
+            q.includes("20 पेज") ||
+            q.includes("फ्री पढ़") ||
+            q.includes("पहले पढ़")
+        ) {
+
+            return `
+                📖 <strong>Free 20 Pages Preview:</strong><br><br>
+                आप <strong>'एक अनजान मुलाकात'</strong> के शुरुआती 20 पेज बिल्कुल मुफ़्त में ऑनलाइन पढ़ सकते हैं:<br><br>
+                👉 <a href="ek-anjan-mulakat-preview-20-pages.pdf" target="_blank" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📄 20 Pages PDF डाउनलोड करें →</a><br>
+                👉 <a href="novel-reader.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📖 ऑनलाइन Reader खोलें →</a>
+            `;
+        }
+
+
+        /* =========================
+           7. FREE EBOOK CHALLENGE
+        ========================= */
+
+        if (
+            q.includes("free ebook") ||
+            q.includes("फ्री ebook") ||
+            q.includes("मुफ्त किताब") ||
+            q.includes("challenge") ||
+            q.includes("चैलेंज") ||
+            q.includes("reels") ||
+            q.includes("stories") ||
+            q.includes("views")
+        ) {
+
+            return `
+                🎁 <strong>Free eBook Challenge नियम:</strong><br><br>
+                1. 🎬 <strong>3 अलग Reels</strong> अपने Instagram पर पोस्ट करें।<br>
+                2. 📱 <strong>2 Stories</strong> लगाएँ और <strong>@saurabhnovelist</strong> को टैग करें।<br>
+                3. 👀 Reels पर कुल <strong>2,000+ Genuine Views</strong> पूरे करें।<br>
+                4. 📸 Screenshots/Proof भेजकर वेरिफिकेशन करवाएँ और Free eBook प्राप्त करें।<br><br>
+                👉 <a href="free-ebook.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">🎁 Promotion Kit और Challenge Page खोलें →</a>
+            `;
+        }
+
+
+        /* =========================
+           8. SHAYARI & SHAYARI BOOKS
+        ========================= */
+
+        if (
+            q.includes("shayari") ||
+            q.includes("शायरी") ||
+            q.includes("अल्फ़ाज़") ||
+            q.includes("alfaz") ||
+            q.includes("shayari book")
+        ) {
+
+            return `
+                ✍️ <strong>हिंदी शायरी & बुक्स</strong><br><br>
+                • <strong>शायरी संग्रह:</strong> प्रेम, दर्द, खामोशी, रिश्ते और जिंदगी के अनकहे एहसासों से सजी पंक्तियाँ।<br>
+                • <strong>पहली शायरी बुक:</strong> <em>'अल्फ़ाज़ जो कह न सके'</em> (लेखक: Saurabh Verma)<br><br>
+                👉 <a href="shayari.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">❤️ सभी शायरियाँ यहाँ पढ़ें →</a><br>
+                👉 <a href="shayari-books.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📚 Shayari Books Section देखें →</a>
+            `;
+        }
+
+
+        /* =========================
+           9. KAVITA (POEMS)
+        ========================= */
+
+        if (
+            q.includes("kavita") ||
+            q.includes("कविता") ||
+            q.includes("poem") ||
+            q.includes("poetry") ||
+            q.includes("हार मत मानो") ||
+            q.includes("झूठी देशभक्ति")
+        ) {
+
             return `
                 🌸 <strong>मेरी कविताएँ (Poems)</strong><br><br>
-                "बस इस बार हो जाएगा, हार मत मानो..." और "झूठी देशभक्ति" जैसी दिल को छू लेने वाली रचनाएँ पढ़ें:<br><br>
-                👉 <a href="kavita.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📖 कविता संग्रह खोलें →</a>
+                सौरभ वर्मा की कलम से निकली प्रेरणादायी एवं दिल को छू लेने वाली रचनाएँ जैसे:<br>
+                • <em>"बस इस बार हो जाएगा, हार मत मानो..."</em><br>
+                • <em>"झूठी देशभक्ति"</em><br>
+                • <em>"बेहतर क्या है"</em><br><br>
+                👉 <a href="kavita.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📖 पूरा कविता संग्रह पढ़ें →</a>
             `;
         }
 
 
         /* =========================
-           5. THOUGHTS / KADVI SACHCHAI (DIRECT LINKS)
+           10. THOUGHTS / KADVI SACHCHAI
         ========================= */
 
         if (
@@ -226,16 +407,17 @@
             q.includes("सच्ची बातें") ||
             q.includes("motivational")
         ) {
+
             return `
                 💭 <strong>कड़वी सच्चाई & Motivational बातें</strong><br><br>
-                जिंदगी, प्रेम, मेहनत और इंसानी रिश्तों के यथार्थ पर सोच बदल देने वाले विचार पढ़ें:<br><br>
-                👉 <a href="thoughts.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">💭 सभी Thoughts पढ़ने के लिए यहाँ क्लिक करें →</a>
+                इंसानी फितरत, मतलबी दुनिया, सच्चा प्रेम और जिंदगी के कड़वे अनुभवों पर सोच बदल देने वाले कोट्स और बातें।<br><br>
+                👉 <a href="thoughts.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">💭 सभी 12+ Thoughts पढ़ने के लिए क्लिक करें →</a>
             `;
         }
 
 
         /* =========================
-           6. ABOUT AUTHOR (DIRECT LINK)
+           11. ABOUT AUTHOR (SAURABH VERMA)
         ========================= */
 
         if (
@@ -245,22 +427,25 @@
             q.includes("saurabh verma") ||
             q.includes("about") ||
             q.includes("writer") ||
-            q.includes("लेखक कौन")
+            q.includes("उद्देश्य") ||
+            q.includes("पहचान") ||
+            q.includes("भाषा")
         ) {
 
             return `
                 ✍️ <strong>लेखक परिचय: Saurabh Verma (सौरभ वर्मा)</strong><br><br>
-                सौरभ वर्मा एक युवा भारतीय उपन्यासकार, लेखक और शायर हैं। उनकी कलम का मूल मंत्र है: <em>"Where Words Become Emotions"</em> (जहाँ शब्द भावनाएँ बन जाते हैं)।<br><br>
-                🌟 <strong>उनकी लेखनी की खासियत:</strong><br>
-                • वे इंसानी जज़्बात, प्रेम, खामोशी, संघर्ष और रिश्तों की कड़वी सच्चाई को बड़ी सादगी से पन्नों पर उतारते हैं।<br>
-                • उनकी प्रमुख रचना <strong>'एक अनजान मुलाकात'</strong> पाठकों के दिलों में एक गहरा भावनात्मक अहसास छोड़ती है।<br><br>
-                👉 <a href="about.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">👤 लेखक की पूरी बायोग्राफी और कहानी पढ़ें →</a>
+                • <strong>पहचान:</strong> युवा हिंदी उपन्यासकार, लेखक और शायर।<br>
+                • <strong>मंच (Platform):</strong> SaurabhNovelist (<em>Where Words Become Emotions</em>)<br>
+                • <strong>उद्देश्य:</strong> शब्दों और भावनाओं के माध्यम से पाठकों को 'दिल से दिल तक' जोड़ना।<br>
+                • <strong>भाषा:</strong> मुख्य रूप से सरल और मर्मस्पर्शी हिंदी।<br>
+                • <strong>प्रमुख कृतियाँ:</strong> उपन्यास 'एक अनजान मुलाकात' और शायरी संग्रह 'अल्फ़ाज़ जो कह न सके'।<br><br>
+                👉 <a href="about.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">👤 लेखक के बारे में विस्तार से पढ़ें →</a>
             `;
         }
 
 
         /* =========================
-           7. HELP & SUPPORT (DIRECT ACTION)
+           12. HELP & SUPPORT / HELPLINE
         ========================= */
 
         if (
@@ -274,92 +459,60 @@
             q.includes("नंबर") ||
             q.includes("call") ||
             q.includes("whatsapp") ||
-            q.includes("email")
+            q.includes("email") ||
+            q.includes("instagram") ||
+            q.includes("youtube") ||
+            q.includes("follow")
         ) {
 
             return `
                 📞 <strong>SaurabhNovelist Helpline & Direct Support</strong><br><br>
-                हम अपने पाठकों की सहायता के लिए हमेशा तैयार हैं:<br><br>
-                📲 <strong>WhatsApp Support:</strong><br>
-                👉 <a href="https://wa.me/917268802785" target="_blank" style="color:#25d366; font-weight:bold; text-decoration:underline;">+91 7268802785 पर चैट करें</a><br><br>
-                📞 <strong>कॉल सहायता:</strong><br>
-                👉 <a href="tel:+917268802785" style="color:#d4af37; font-weight:bold; text-decoration:underline;">+91 7268802785 पर कॉल करें</a><br><br>
-                ✉️ <strong>ईमेल:</strong><br>
-                👉 <a href="mailto:saurabhnovelist@gmail.com" style="color:#ffcc00; text-decoration:underline;">saurabhnovelist@gmail.com</a><br><br>
-                📷 <strong>Instagram:</strong><br>
-                👉 <a href="https://instagram.com/saurabhnovelist" target="_blank" style="color:#e1306c; font-weight:bold; text-decoration:underline;">@saurabhnovelist</a>
+                पाठक किसी भी जानकारी या सहायता के लिए सीधे संपर्क कर सकते हैं:<br><br>
+                📲 <strong>WhatsApp:</strong> <a href="https://wa.me/917268802785" target="_blank" style="color:#25d366; font-weight:bold; text-decoration:underline;">+91 7268802785</a><br>
+                📞 <strong>Call Helpline:</strong> <a href="tel:+917268802785" style="color:#d4af37; font-weight:bold; text-decoration:underline;">+91 7268802785</a><br>
+                📷 <strong>Instagram:</strong> <a href="https://instagram.com/saurabhnovelist" target="_blank" style="color:#e1306c; font-weight:bold; text-decoration:underline;">@saurabhnovelist</a><br>
+                ▶️ <strong>YouTube:</strong> <a href="https://youtube.com/@saurabhnovelist" target="_blank" style="color:#ff4444; font-weight:bold; text-decoration:underline;">SaurabhNovelist YouTube</a><br>
+                ✉️ <strong>Email:</strong> <a href="mailto:saurabhnovelist@gmail.com" style="color:#ffcc00; text-decoration:underline;">saurabhnovelist@gmail.com</a>
             `;
         }
 
 
         /* =========================
-           8. BUY NOVEL / QR CODE
+           13. WEBSITE & DOGGY INFO
         ========================= */
 
         if (
-            q.includes("buy") ||
-            q.includes("खरीद") ||
-            q.includes("purchase") ||
-            q.includes("order") ||
-            q.includes("qr") ||
-            q.includes("क्यूआर") ||
-            q.includes("pay") ||
-            q.includes("49") ||
-            q.includes("₹49") ||
-            q.includes("कीमत") ||
-            q.includes("दाम")
+            q.includes("doggy") ||
+            q.includes("assistant") ||
+            q.includes("आप कौन हो") ||
+            q.includes("तुम कौन हो") ||
+            q.includes("website") ||
+            q.includes("theme") ||
+            q.includes("mobile") ||
+            q.includes("saurabhnovelist क्या है")
         ) {
 
             return `
-                🛒 <strong>Novel "एक अनजान मुलाकात" (Full Edition)</strong><br><br>
-                💰 <strong>मूल्य:</strong> मात्र ₹49<br><br>
-                📱 <strong>नीचे दिए गए QR कोड को Scan करके Pay करें:</strong><br><br>
-                <div style="background:#fff; padding:10px; border-radius:10px; text-align:center; max-width:200px; margin:5px auto; border:2px solid #d4af37;">
-                    <img src="images/qr.png" alt="Payment QR Code" style="width:100%; height:auto; border-radius:6px; display:block;">
-                </div>
-                <br>
-                ✅ <strong>पेमेंट करने के बाद:</strong><br>
-                स्क्रीनशॉट इस WhatsApp लिंक पर भेजें:<br>
-                👉 <a href="https://wa.me/917268802785?text=Hello,%20maine%20novel%20ke%20liye%20payment%20kar%20diya%20hai.%20Ye%20raha%20screenshot." target="_blank" style="color:#25d366; font-weight:bold; text-decoration:underline;">📲 WhatsApp पर Screenshot भेजें (+91 7268802785)</a><br><br>
-                🔗 या Reader पेज पर जाएँ:<br>
-                👉 <a href="novel-reader.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📖 Novel Reader Page खोलें →</a>
+                🌐 <strong>SaurabhNovelist & Doggy AI Assistant</strong><br><br>
+                • <strong>वेबसाइट:</strong> saurabhnovelist.github.io (Dark/Black & Gold साहित्यिक थीम पर आधारित, पूर्णतः मोबाइल फ्रेंडली)।<br>
+                • <strong>डॉग असिस्टेंट:</strong> मैं वेबसाइट, उपन्यास, शायरी, कविता, फ्री ई-बुक और लेखक से जुड़े सभी सवालों के जवाब देने के लिए यहाँ मौजूद हूँ। 🐶✨
             `;
         }
 
 
         /* =========================
-           9. FREE PREVIEW / 20 PAGES
-        ========================= */
-
-        if (
-            q.includes("sample") ||
-            q.includes("preview") ||
-            q.includes("20 page") ||
-            q.includes("20 पेज") ||
-            q.includes("फ्री पढ़")
-        ) {
-
-            return `
-                📖 <strong>Free 20 Pages Preview:</strong><br><br>
-                आप <strong>'एक अनजान मुलाकात'</strong> के शुरुआती 20 पेज बिल्कुल मुफ़्त में ऑनलाइन पढ़ सकते हैं:<br><br>
-                👉 <a href="ek-anjan-mulakat-preview-20-pages.pdf" target="_blank" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📄 20 Pages PDF डाउनलोड करें →</a><br>
-                👉 <a href="novel-reader.html" style="color:#d4af37; font-weight:bold; text-decoration:underline;">📖 ऑनलाइन Reader खोलें →</a>
-            `;
-        }
-
-
-        /* =========================
-           10. DEFAULT FALLBACK
+           14. DEFAULT FALLBACK
         ========================= */
 
         return `
-            🐶 मुझे इस बारे में सटीक जानकारी नहीं मिली, लेकिन आप सीधे ये पेजेस देख सकते हैं:<br><br>
+            🐶 मुझे इस सवाल का सटीक उत्तर अभी नहीं मिला, लेकिन आप इन प्रमुख लिंक्स पर जा सकते हैं:<br><br>
             • <a href="novel.html" style="color:#d4af37; text-decoration:underline;">📖 Novel "एक अनजान मुलाकात"</a><br>
+            • <a href="novel-reader.html" style="color:#d4af37; text-decoration:underline;">🛒 Buy ₹49 / 20 Pages Free</a><br>
             • <a href="shayari.html" style="color:#d4af37; text-decoration:underline;">✍️ शायरी संग्रह</a><br>
             • <a href="kavita.html" style="color:#d4af37; text-decoration:underline;">🌸 कविताएँ</a><br>
             • <a href="thoughts.html" style="color:#d4af37; text-decoration:underline;">💭 कड़वी सच्चाई</a><br>
-            • <a href="about.html" style="color:#d4af37; text-decoration:underline;">👤 लेखक के बारे में</a><br><br>
-            या सीधे <a href="https://wa.me/917268802785" target="_blank" style="color:#25d366; font-weight:bold; text-decoration:underline;">WhatsApp पर संपर्क करें</a>।
+            • <a href="about.html" style="color:#d4af37; text-decoration:underline;">👤 लेखक परिचय</a><br><br>
+            या सीधे <a href="https://wa.me/917268802785" target="_blank" style="color:#25d366; font-weight:bold; text-decoration:underline;">WhatsApp पर पूछें</a>।
         `;
     }
 
