@@ -1840,3 +1840,97 @@ img {
         opacity: 0;
     }
 }
+/* EK ANJAAN MULAKAT - PHYSICAL BOOK BANNER */
+.physical-book-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    margin: 18px auto;
+    padding: 35px 22px;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.72)),
+        url("images/ek-anjan-mulakat-book-cover.jpg")
+        center 35% / cover no-repeat;
+    border: 1px solid #d4af37;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.5);
+}
+
+.physical-book-content {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+}
+
+.physical-book-label {
+    color: #e5c76b;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.physical-book-content h2 {
+    margin: 18px 0 10px;
+    color: #f0cc65;
+    font-size: clamp(28px, 5vw, 44px);
+    text-shadow: 0 2px 12px #000;
+}
+
+.physical-book-subtitle {
+    margin: 10px 0 22px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.physical-book-status {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    color: #f5d778;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.physical-book-edition {
+    margin: 13px 0 5px;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+.physical-book-author {
+    margin-bottom: 0;
+    color: #e5c76b;
+}
+
+.physical-book-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    z-index: 2;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .physical-book-banner {
+        min-height: 270px;
+        margin: 12px;
+        padding: 30px 16px;
+    }
+
+    .physical-book-label {
+        letter-spacing: 2px;
+    }
+
+    .physical-book-subtitle {
+        font-size: 14px;
+    }
+}
