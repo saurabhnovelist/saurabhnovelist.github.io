@@ -517,15 +517,10 @@ body{
 <!-- ================= JAVASCRIPT ================= -->
 
 <script>
+function filterPosts(type, button) {
 
-function filterPosts(type, button){
-
-    const posts =
-        document.querySelectorAll(".post");
-
-    const buttons =
-        document.querySelectorAll(".category");
-
+    const posts = document.querySelectorAll(".post");
+    const buttons = document.querySelectorAll(".category");
 
     buttons.forEach(btn => {
         btn.classList.remove("active");
@@ -533,32 +528,15 @@ function filterPosts(type, button){
 
     button.classList.add("active");
 
-
     posts.forEach(post => {
-
-        if(type === "all"){
-
+        if (type === "all" || post.classList.contains(type)) {
             post.style.display = "";
-
-        }
-
-        else if(post.classList.contains(type)){
-
-            post.style.display = "";
-
-        }
-
-        else{
-
+        } else {
             post.style.display = "none";
-
         }
-
     });
-
 }
-
-
+</script>
     <script src="click-heart.js"></script>
 </body>
 </html>
