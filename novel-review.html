@@ -432,98 +432,74 @@ async function submitReview(){
 
 }
 
-
 /* LOAD REVIEWS */
 
 async function loadReviews(){
 
-    const { data, error } =
-        await supabaseClient
+    const list = document.getElementById("reviewsList");
+    const average = document.getElementById("average");
+
+    list.innerHTML = "⏳ Reviews लोड हो रहे हैं...";
+
+    const { data, error } = await supabaseClient
         .from("novel_reviews")
         .select("*")
-        .eq("novel","एक अनजान मुलाकात")
-        .order("created_at",{ascending:false});
-
+        .eq("novel", "एक अनजान मुलाकात")
+        .order("created_at", { ascending:false });
 
     if(error){
 
-        console.error(error);
+        console.error("Supabase Review Error:", error);
+
+        average.innerText = "⚠️ Reviews लोड नहीं हो पाए।";
+
+        list.innerText = error.message;
 
         return;
     }
-
-
-    const list =
-        document.getElementById("reviewsList");
-
-
-    const average =
-        document.getElementById("average");
-
 
     list.innerHTML = "";
 
-
     if(!data || data.length === 0){
 
-        average.innerText =
-        "⭐ अभी कोई Review नहीं है";
+        average.innerText = "⭐ अभी कोई Review नहीं है";
 
         return;
     }
 
-
     let total = 0;
-
 
     data.forEach(review => {
 
-        total += review.rating;
+        total += Number(review.rating);
 
-
-        const card =
-        document.createElement("div");
-
-        card.className =
-        "review-card";
-
-
-        const stars =
-        "★".repeat(review.rating) +
-        "☆".repeat(5-review.rating);
-
+        const card = document.createElement("div");
+        card.className = "review-card";
 
         card.innerHTML = `
-
             <div class="review-name">
-                👤 ${escapeHTML(review.name)}
+                👤 ${escapeHTML(review.name || "पाठक")}
             </div>
 
             <div class="review-stars">
-                ${stars}
+                ${"★".repeat(Number(review.rating) || 0)}
+                ${"☆".repeat(5 - (Number(review.rating) || 0))}
             </div>
 
             <div class="review-comment">
-                ${escapeHTML(review.comment)}
+                ${escapeHTML(review.comment || "")}
             </div>
-
         `;
-
 
         list.appendChild(card);
 
     });
 
-
-    const avg =
-        (total / data.length).toFixed(1);
-
+    const avg = (total / data.length).toFixed(1);
 
     average.innerText =
         `⭐ ${avg} / 5 — ${data.length} Reviews`;
-
 }
-
 
 /* SECURITY */
 
