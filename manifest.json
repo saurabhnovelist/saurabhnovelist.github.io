@@ -1,1 +1,22 @@
 
+
+{
+  "id": "./",
+  "name": "SaurabhNovelist",
+  "short_name": "SaurabhNovelist",
+  "description": "Hindi novels, shayari, poems and emotional stories by SaurabhNovelist.",
+  "lang": "hi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0b0d",
+  "theme_color": "#0b0b0d",
+  "icons": [
+    {
+      "src": "./images/author.jpg",
+      "sizes": "any",
+      "type": "image/jpeg"
+    }
+  ]
+}
